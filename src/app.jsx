@@ -1,12 +1,14 @@
 import './css/main.scss';
 
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
 
 class App extends React.Component {
-  render () {
-    return <p> Hello React!</p>;
-  }
+    render () {
+        return <h1> Hello React!</h1>;
+    }
 }
 
-render(<App/>, document.getElementById('app'));
+//document.addEventListener('deviceready', *func, false);
+
+ReactDOM.render(<App/>, document.getElementById('content'));
