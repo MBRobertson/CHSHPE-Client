@@ -1,16 +1,18 @@
+@import './fonts/fonts.scss';
+@import './config.scss';
+@import './nav.scss';
+
 body,html {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(57, 57, 57);
-    padding: 100px;
-    color: white;
-}
-p {
+    font-family: 'Roboto',Arial, sans-serif;
+    background-color: #dddddd;
 }

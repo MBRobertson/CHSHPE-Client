@@ -1,0 +1,43 @@
+@import './config.scss';
+
+nav {
+    display: block;
+    background-color: $school-color;
+    width: 100%;
+    height: $nav-height;
+    border-bottom: 1px solid darken($school-color, 5%);
+
+    h1 {
+        display: inline-block;
+        margin: 0;
+        padding: 15px 0 0 20px;
+        box-sizing: border-box;
+        font-size: 26px;
+        height: 100%;
+        color: white;
+        font-family: 'Roboto Condensed';
+        font-weight: normal;
+        vertical-align: top;
+        text-shadow: 0 0 3px darken($school-color, 20%);
+    }
+
+    #hamburger {
+        display: inline-block;
+        width: $nav-height;
+        height: $nav-height;
+        background-color: lighten($school-color, 5%);
+        border-right: 1px solid darken($school-color, 5%);
+        &:before {
+            content: "";
+            position: absolute;
+            left: $nav-hamburger-padding;
+            top: ($nav-height - 20px)/2;
+            width: ($nav-height - ($nav-hamburger-padding * 2));
+            height: 3px;
+            background: white;
+            box-shadow:
+                0 9px 0 0 white,
+                0 18px 0 0 white;
+        }
+    }
+}
