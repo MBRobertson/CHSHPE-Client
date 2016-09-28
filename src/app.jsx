@@ -2,20 +2,37 @@ import './css/main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
+
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Nav from './components/Nav.jsx';
 
 class App extends React.Component {
-    render () {
-        return this.props.children;
+    render() {
+        return (
+            <main>
+                <Nav loc={this.props.location}/>
+                <section id="mainContent" key={this.props.location.pathname}>
+                    {this.props.children}
+                </section>
+            </main>
+        );
     }
 }
+
+/*
+<ReactCSSTransitionGroup transitionName="pageSwap" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+    <section id="mainContent" key={this.props.location.pathname}>
+        {this.props.children}
+    </section>
+</ReactCSSTransitionGroup>
+*/
 
 class Home extends React.Component {
     render() {
         return (
-            <Nav title="CHS PE"/>
+            <h2>Hello Home!</h2>
         );
     }
 }
@@ -23,7 +40,7 @@ class Home extends React.Component {
 class Timetable extends React.Component {
     render() {
         return (
-            <Nav title="Timetable"/>
+            <h2>Hello Timetable!</h2>
         );
     }
 }
@@ -33,10 +50,11 @@ class Timetable extends React.Component {
 //ReactDOM.render(<App/>, document.getElementById('app'));
 
 ReactDOM.render(
-    (<App>
-        <Router history={hashHistory}>
-            <Route path="/" component={Home}/>
-            <Route path="/time" component={Timetable}/>
-        </Router>
-    </App>),
-    document.getElementById('app'))
+    (<Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute path="" component={Home} />
+            <Route path="time" component={Timetable}/>
+        </Route>
+    </Router>),
+    document.getElementById('app')
+);

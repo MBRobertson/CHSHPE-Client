@@ -4,16 +4,25 @@ nav {
     display: block;
     background-color: $school-color;
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    float: left;
     height: $nav-height;
+    box-sizing: border-box;
+    z-index: 10;
     border-bottom: 1px solid darken($school-color, 5%);
 
     h1 {
         display: inline-block;
         margin: 0;
-        padding: 15px 0 0 20px;
+        padding: 0 0 0 15px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
         box-sizing: border-box;
-        font-size: 26px;
-        height: 100%;
+        font-size: 24px;
+        //height: 100%;
         color: white;
         font-family: 'Roboto Condensed';
         font-weight: normal;
@@ -26,18 +35,106 @@ nav {
         width: $nav-height;
         height: $nav-height;
         background-color: lighten($school-color, 5%);
-        border-right: 1px solid darken($school-color, 5%);
+        border-right: 1px solid darken($school-color, 10%);
+        transition: background linear 0.2s;
+        border-bottom: 1px solid darken($school-color, 5%);
+        box-sizing: border-box;
+
         &:before {
             content: "";
             position: absolute;
             left: $nav-hamburger-padding;
-            top: ($nav-height - 20px)/2;
+            top: ($nav-height - 16px)/2;
             width: ($nav-height - ($nav-hamburger-padding * 2));
-            height: 3px;
+            height: 2px;
             background: white;
             box-shadow:
-                0 9px 0 0 white,
-                0 18px 0 0 white;
+                0 7px 0 0 white,
+                0 14px 0 0 white;
+            // transition: left ease-in-out 0.25s;
+
+
+        }
+
+        &.selected {
+            background-color: darken($school-color, 5%);
+            border-right: 1px solid darken($school-color, 10%);
+        }
+
+        // &.hidden:before {
+        //     left: $nav-hamburger-padding - ($nav-height/2);
+        // }
+    }
+
+    #navHolder {
+        display: block;
+        position: fixed;
+        float: left;
+        top: $nav-height;
+        left: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 3px 0;
+        height: calc(100% - #{$nav-height});
+        width: 80%;
+        max-width: 300px;
+        min-width: 200px;
+        background-color: #3c3c3c;
+        transition: transform ease-in 0.20s;
+        z-index: 5;
+        border-right: 1px solid #000;
+        overflow-y: auto;
+        list-style: none;
+        //box-shadow: 0 0 7px #282828;
+
+        &.hidden {
+            //left: -100%;
+            transform: translateX(-100%);
         }
     }
+
+    .nav-button {
+        display: block;
+        margin: 8px 0;
+        padding: 0;
+        width: 100%;
+        height: 50px;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 12px 18px;
+            box-sizing: border-box;
+            background-color: #545454;
+            border-top: 1px solid #252424;
+            border-bottom: 1px solid #252424;
+            color: white;
+            text-decoration: none;
+            font-family: 'Roboto Condensed';
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: 0 0 3px black;
+            cursor: pointer;
+        }
+
+        &.active {
+            a {
+                background-color: lighten($school-color, 7%);
+                box-shadow: 0 0 3px darken($school-color, 12%);
+            }
+        }
+    }
+
+    // #navSwiper {
+    //     display: block;
+    //     width: 50px;
+    //     position: fixed;
+    //     left: 0;
+    //     background-color: rgba(#fff, 0);
+    //
+    //     top: $nav-height;
+    //     height: calc(100% - #{$nav-height});
+    // }
 }

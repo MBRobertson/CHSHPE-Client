@@ -1,0 +1,36 @@
+// .pageSwap-enter {
+//     transform: translateX(100%);
+//     //border-left: 1px solid #343434;
+// }
+//
+// .pageSwap-enter.pageSwap-enter-active {
+//     transform: translateX(0);
+//     transition: transform linear 300ms;
+// }
+//
+// .pageSwap-leave {
+//     transform: translateX(0);
+// }
+//
+// .pageSwap-leave.pageSwap-leave-active {
+//     transform: translateX(-100%);
+//     transition: transform linear 300ms;
+// }
+.pageSwap-enter {
+    opacity: 0;
+    //border-left: 1px solid #343434;
+}
+
+.pageSwap-enter.pageSwap-enter-active {
+    opacity: 1;
+    transition: opacity linear 300ms;
+}
+
+.pageSwap-leave {
+    opacity: 1;
+}
+
+.pageSwap-leave.pageSwap-leave-active {
+    opacity: 0;
+    transition: opacity linear 300ms;
+}
