@@ -217,7 +217,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Regular.ttf */ 4) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Bold.ttf */ 5) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Regular.ttf */ 6) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Bold.ttf */ 7) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n/* Navigation */\n/* Navigation */\nnav {\n  display: block;\n  background-color: #003e7e;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  float: left;\n  height: 50px;\n  box-sizing: border-box;\n  z-index: 10;\n  border-bottom: 1px solid #003165; }\n  nav h1 {\n    display: inline-block;\n    margin: 0;\n    padding: 0 0 0 15px;\n    position: relative;\n    top: 50%;\n    transform: translateY(-50%);\n    box-sizing: border-box;\n    font-size: 24px;\n    color: white;\n    font-family: 'Roboto Condensed';\n    font-weight: normal;\n    vertical-align: top;\n    text-shadow: 0 0 3px #000c18; }\n  nav #hamburger {\n    display: inline-block;\n    width: 50px;\n    height: 50px;\n    background-color: #004b98;\n    border-right: 1px solid #00254b;\n    transition: background linear 0.2s;\n    border-bottom: 1px solid #003165;\n    box-sizing: border-box; }\n    nav #hamburger:before {\n      content: \"\";\n      position: absolute;\n      left: 12px;\n      top: 17px;\n      width: 26px;\n      height: 2px;\n      background: white;\n      box-shadow: 0 7px 0 0 white,\r 0 14px 0 0 white; }\n    nav #hamburger.selected {\n      background-color: #003165;\n      border-right: 1px solid #00254b; }\n  nav #navHolder {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 50px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 3px 0;\n    height: calc(100% - 50px);\n    width: 80%;\n    max-width: 300px;\n    min-width: 200px;\n    background-color: #3c3c3c;\n    transition: transform ease-in 0.20s;\n    z-index: 5;\n    border-right: 1px solid #000;\n    overflow-y: auto;\n    list-style: none; }\n    nav #navHolder.hidden {\n      transform: translateX(-100%); }\n  nav .nav-button {\n    display: block;\n    margin: 8px 0;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-button a {\n      display: block;\n      width: 100%;\n      height: 100%;\n      margin: 0;\n      padding: 12px 18px;\n      box-sizing: border-box;\n      background-color: #545454;\n      border-top: 1px solid #252424;\n      border-bottom: 1px solid #252424;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: bold;\n      font-size: 20px;\n      text-shadow: 0 0 3px black;\n      cursor: pointer; }\n    nav .nav-button.active a {\n      background-color: #0050a2;\n      box-shadow: 0 0 3px #002041; }\n\n.pageSwap-enter {\n  opacity: 0; }\n\n.pageSwap-enter.pageSwap-enter-active {\n  opacity: 1;\n  transition: opacity linear 300ms; }\n\n.pageSwap-leave {\n  opacity: 1; }\n\n.pageSwap-leave.pageSwap-leave-active {\n  opacity: 0;\n  transition: opacity linear 300ms; }\n\nbody, html {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  padding: 0;\n  margin: 0;\n  height: calc(100% - 50px); }\n\n#app, main, body {\n  height: 100%; }\n\nbody {\n  font-family: 'Roboto',Arial, sans-serif;\n  margin-top: 50px; }\n\n#mainContent {\n  display: block;\n  width: 100%;\n  height: calc(100% - 50px);\n  margin: 0;\n  background-color: #dddddd;\n  overflow-y: auto;\n  position: absolute;\n  top: 50px;\n  left: 0; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Regular.ttf */ 4) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Bold.ttf */ 5) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Regular.ttf */ 6) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Bold.ttf */ 7) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n/* Navigation */\n/* Navigation */\nnav {\n  display: block;\n  background-color: #01579B;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  float: left;\n  height: 55px;\n  box-sizing: border-box;\n  z-index: 10;\n  border-bottom: 1px solid #014378;\n  border-top: 1px solid #016bbe; }\n  nav h1 {\n    display: inline-block;\n    margin: 0;\n    padding: 0 0 0 15px;\n    position: relative;\n    top: 50%;\n    transform: translateY(-50%);\n    box-sizing: border-box;\n    font-size: 24px;\n    color: white;\n    font-family: 'Roboto Condensed';\n    font-weight: normal;\n    vertical-align: top;\n    text-shadow: 0 0 3px #001e36; }\n  nav #hamburger {\n    margin-top: -1px;\n    display: inline-block;\n    width: 55px;\n    height: 55px;\n    border-right: 1px solid rgba(1, 59, 104, 0);\n    transition: background linear 0.2s, border linear 0.2s;\n    box-sizing: border-box; }\n    nav #hamburger:before {\n      content: \"\";\n      position: absolute;\n      left: 17px;\n      top: 19px;\n      width: 21px;\n      height: 2px;\n      background: white;\n      box-shadow: 0 7px 0 0 white,\r 0 14px 0 0 white; }\n    nav #hamburger.selected {\n      background-color: #014982;\n      border-right: 1px solid #013b68;\n      border-bottom: 1px solid #014982; }\n  nav #navHolder {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 55px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    height: calc(100% - 55px);\n    width: 80%;\n    max-width: 300px;\n    min-width: 200px;\n    background-color: #3c3c3c;\n    transition: transform cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s;\n    z-index: 5;\n    border-right: 1px solid #2d2d2d;\n    border-top: 1px solid #2d2d2d;\n    overflow-y: auto;\n    list-style: none; }\n    nav #navHolder.hidden {\n      transform: translateX(-100%); }\n  nav .nav-header {\n    display: block;\n    margin: 0px 0 15px;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-header h3 {\n      display: block;\n      width: calc(100% - 40px);\n      height: 100%;\n      margin: 0 20px;\n      padding: 20px 5px;\n      box-sizing: border-box;\n      /* background-color: #545454; */\n      /* border-top: 1px solid #252424; */\n      border-bottom: 1px solid #8a8a8a;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: normal;\n      font-size: 22px;\n      text-shadow: 0 0 3px black; }\n  nav .nav-button {\n    display: block;\n    margin: 8px 0;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-button a {\n      display: block;\n      width: 100%;\n      height: 100%;\n      margin: 0;\n      padding: 12px 18px;\n      box-sizing: border-box;\n      background-color: #545454;\n      border-top: 1px solid #252424;\n      border-bottom: 1px solid #252424;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: bold;\n      font-size: 20px;\n      text-shadow: 0 0 3px black;\n      cursor: pointer;\n      transition: background-color linear 0.15s,\r border linear 0.15s,\r box-shadow linear 0.15s; }\n    nav .nav-button.active a {\n      background-color: #016bbe;\n      box-shadow: 0 0 3px #012c4f;\n      border-top: 1px solid #001321;\n      border-bottom: 1px solid #001321; }\n\n.pageSwap-enter {\n  opacity: 0; }\n\n.pageSwap-enter.pageSwap-enter-active {\n  opacity: 1;\n  transition: opacity linear 300ms; }\n\n.pageSwap-leave {\n  opacity: 1; }\n\n.pageSwap-leave.pageSwap-leave-active {\n  opacity: 0;\n  transition: opacity linear 300ms; }\n\nbody, html {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  padding: 0;\n  margin: 0;\n  height: calc(100% - 55px); }\n\n#app, main, body {\n  height: 100%; }\n\nbody {\n  font-family: 'Roboto',Arial, sans-serif;\n  margin-top: 55px; }\n\n#mainContent {\n  display: block;\n  width: 100%;\n  height: calc(100% - 55px);\n  margin: 0;\n  background-color: #dddddd;\n  overflow-y: auto;\n  position: absolute;\n  top: 55px;\n  left: 0; }\n", ""]);
 	
 	// exports
 
@@ -29179,23 +29179,37 @@
 	
 	var pages = [{
 	    id: 1,
-	    title: 'CHS PE',
-	    nav_text: 'Home',
-	    url: '/'
+	    heading: "CHS PE",
+	    pages: [{
+	        id: 1,
+	        title: 'CHS PE',
+	        nav_text: 'Home',
+	        url: '/'
+	    }, {
+	        id: 2,
+	        title: 'News',
+	        url: '/news'
+	    }, {
+	        id: 3,
+	        title: 'Timetable',
+	        url: '/time'
+	    }]
 	}, {
 	    id: 2,
-	    title: 'News',
-	    url: '/news'
-	}, {
-	    id: 3,
-	    title: 'Timetable',
-	    url: '/time'
+	    heading: "Settings",
+	    pages: [{
+	        id: 4,
+	        title: 'Settings',
+	        url: '/settings'
+	    }]
 	}];
 	
 	var getPageTitle = function getPageTitle(location) {
 	    if (location) {
 	        for (var i = 0; i < pages.length; i++) {
-	            if (pages[i].url == location.pathname) return pages[i].title;
+	            for (var z = 0; z < pages[i].pages.length; z++) {
+	                if (pages[i].pages[z].url == location.pathname) return pages[i].pages[z].title;
+	            }
 	        }
 	    }
 	    console.log("No pathname found");
@@ -29256,8 +29270,10 @@
 	                _react2.default.createElement(
 	                    'ul',
 	                    { id: 'navHolder', className: this.state.open ? '' : 'hidden' },
-	                    pages.map(function (page) {
-	                        return _react2.default.createElement(NavButton, { clickHandler: _this2.closeNav, key: page.id, page: page, curPage: _this2.props.loc.pathname });
+	                    pages.map(function (pageSet) {
+	                        return [_react2.default.createElement(NavHeader, { text: pageSet.heading, key: pageSet.id }), pageSet.pages.map(function (page) {
+	                            return _react2.default.createElement(NavButton, { clickHandler: _this2.closeNav, key: page.id, page: page, curPage: _this2.props.loc.pathname });
+	                        })];
 	                    })
 	                )
 	            );
@@ -29293,6 +29309,33 @@
 	    }]);
 	
 	    return NavButton;
+	}(_react2.default.Component);
+	
+	var NavHeader = function (_React$Component3) {
+	    _inherits(NavHeader, _React$Component3);
+	
+	    function NavHeader() {
+	        _classCallCheck(this, NavHeader);
+	
+	        return _possibleConstructorReturn(this, (NavHeader.__proto__ || Object.getPrototypeOf(NavHeader)).apply(this, arguments));
+	    }
+	
+	    _createClass(NavHeader, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'li',
+	                { className: 'nav-header' },
+	                _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    this.props.text
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return NavHeader;
 	}(_react2.default.Component);
 	
 	exports.default = Nav;

@@ -3,27 +3,47 @@ import React from 'react';
 let pages = [
     {
         id: 1,
-        title: 'CHS PE',
-        nav_text: 'Home',
-        url: '/'
+        heading: "CHS PE",
+        pages: [
+            {
+                id: 1,
+                title: 'CHS PE',
+                nav_text: 'Home',
+                url: '/'
+            },
+            {
+                id: 2,
+                title: 'News',
+                url: '/news'
+            },
+            {
+                id: 3,
+                title: 'Timetable',
+                url: '/time'
+            }
+        ]
     },
     {
         id: 2,
-        title: 'News',
-        url: '/news'
-    },
-    {
-        id: 3,
-        title: 'Timetable',
-        url: '/time'
+        heading: "Settings",
+        pages: [
+            {
+                id: 4,
+                title: 'Settings',
+                url: '/settings'
+            }
+        ]
     }
 ]
 
 let getPageTitle = (location) => {
     if (location) {
         for (var i = 0; i < pages.length; i++) {
-            if (pages[i].url == location.pathname)
-                return pages[i].title;
+            for (var z = 0; z < pages[i].pages.length; z++) {
+                if (pages[i].pages[z].url == location.pathname)
+                    return pages[i].pages[z].title;
+            }
+
         }
     }
     console.log("No pathname found");
@@ -65,8 +85,13 @@ class Nav extends React.Component {
                 <span id="hamburger" className={this.state.open ? 'selected' : ''} onClick={this.toggleNav}/>
                 <h1>{getPageTitle(this.props.loc)}</h1>
                 <ul id="navHolder" className={this.state.open ? '' : 'hidden'}>
-                    {pages.map((page) => {
-                        return (<NavButton clickHandler={this.closeNav} key={page.id} page={page} curPage={this.props.loc.pathname} />);
+                    {pages.map((pageSet) => {
+                        return [
+                            <NavHeader text={pageSet.heading} key={pageSet.id}/>,
+                            pageSet.pages.map((page) => {
+                                return (<NavButton clickHandler={this.closeNav} key={page.id} page={page} curPage={this.props.loc.pathname} />);
+                            })
+                        ]
                     })}
                 </ul>
             </nav>
@@ -80,6 +105,14 @@ class NavButton extends React.Component {
         return (<li className={"nav-button" + (this.props.page.url == this.props.curPage ? ' active' : '')}>
             <a onClick={this.props.clickHandler} href={'#' + this.props.page.url}>{title}</a>
         </li>);
+    }
+}
+
+class NavHeader extends React.Component {
+    render() {
+        return (
+            <li className="nav-header"><h3>{this.props.text}</h3></li>
+        );
     }
 }
 
