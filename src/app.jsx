@@ -4,6 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
+import { Home } from './pages/home.jsx';
+
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Nav from './components/Nav.jsx';
@@ -29,13 +31,7 @@ class App extends React.Component {
 </ReactCSSTransitionGroup>
 */
 
-class Home extends React.Component {
-    render() {
-        return (
-            <h2>Hello Home!</h2>
-        );
-    }
-}
+
 
 class Timetable extends React.Component {
     render() {
@@ -53,7 +49,7 @@ ReactDOM.render(
     (<Router history={hashHistory}>
         <Route path="/" component={App}>
             <IndexRoute path="" component={Home} />
-            <Route path="time" component={Timetable}/>
+            <Route path="timetable" component={Timetable}/>
         </Route>
     </Router>),
     document.getElementById('app')

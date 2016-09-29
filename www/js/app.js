@@ -63,11 +63,13 @@
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 180);
 	
-	var _reactAddonsCssTransitionGroup = __webpack_require__(/*! react-addons-css-transition-group */ 243);
+	var _home = __webpack_require__(/*! ./pages/home.jsx */ 243);
+	
+	var _reactAddonsCssTransitionGroup = __webpack_require__(/*! react-addons-css-transition-group */ 245);
 	
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 	
-	var _Nav = __webpack_require__(/*! ./components/Nav.jsx */ 250);
+	var _Nav = __webpack_require__(/*! ./components/Nav.jsx */ 252);
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
@@ -115,31 +117,8 @@
 	</ReactCSSTransitionGroup>
 	*/
 	
-	var Home = function (_React$Component2) {
-	    _inherits(Home, _React$Component2);
-	
-	    function Home() {
-	        _classCallCheck(this, Home);
-	
-	        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
-	    }
-	
-	    _createClass(Home, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'h2',
-	                null,
-	                'Hello Home!'
-	            );
-	        }
-	    }]);
-	
-	    return Home;
-	}(_react2.default.Component);
-	
-	var Timetable = function (_React$Component3) {
-	    _inherits(Timetable, _React$Component3);
+	var Timetable = function (_React$Component2) {
+	    _inherits(Timetable, _React$Component2);
 	
 	    function Timetable() {
 	        _classCallCheck(this, Timetable);
@@ -171,8 +150,8 @@
 	    _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: App },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { path: '', component: Home }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'time', component: Timetable })
+	        _react2.default.createElement(_reactRouter.IndexRoute, { path: '', component: _home.Home }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'timetable', component: Timetable })
 	    )
 	), document.getElementById('app'));
 
@@ -217,7 +196,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Regular.ttf */ 4) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Bold.ttf */ 5) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Regular.ttf */ 6) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Bold.ttf */ 7) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n/* Navigation */\n/* Navigation */\nnav {\n  display: block;\n  background-color: #01579B;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  float: left;\n  height: 55px;\n  box-sizing: border-box;\n  z-index: 10;\n  border-bottom: 1px solid #014378;\n  border-top: 1px solid #016bbe; }\n  nav h1 {\n    display: inline-block;\n    margin: 0;\n    padding: 0 0 0 15px;\n    position: relative;\n    top: 50%;\n    transform: translateY(-50%);\n    box-sizing: border-box;\n    font-size: 24px;\n    color: white;\n    font-family: 'Roboto Condensed';\n    font-weight: normal;\n    vertical-align: top;\n    text-shadow: 0 0 3px #001e36; }\n  nav #hamburger {\n    margin-top: -1px;\n    display: inline-block;\n    width: 55px;\n    height: 55px;\n    border-right: 1px solid rgba(1, 59, 104, 0);\n    transition: background linear 0.2s, border linear 0.2s;\n    box-sizing: border-box; }\n    nav #hamburger:before {\n      content: \"\";\n      position: absolute;\n      left: 17px;\n      top: 19px;\n      width: 21px;\n      height: 2px;\n      background: white;\n      box-shadow: 0 7px 0 0 white,\r 0 14px 0 0 white; }\n    nav #hamburger.selected {\n      background-color: #014982;\n      border-right: 1px solid #013b68;\n      border-bottom: 1px solid #014982; }\n  nav #navHolder {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 55px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    height: calc(100% - 55px);\n    width: 80%;\n    max-width: 300px;\n    min-width: 200px;\n    background-color: #3c3c3c;\n    transition: transform cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s;\n    z-index: 5;\n    border-right: 1px solid #2d2d2d;\n    border-top: 1px solid #2d2d2d;\n    overflow-y: auto;\n    list-style: none; }\n    nav #navHolder.hidden {\n      transform: translateX(-100%); }\n  nav .nav-header {\n    display: block;\n    margin: 0px 0 15px;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-header h3 {\n      display: block;\n      width: calc(100% - 40px);\n      height: 100%;\n      margin: 0 20px;\n      padding: 20px 5px;\n      box-sizing: border-box;\n      /* background-color: #545454; */\n      /* border-top: 1px solid #252424; */\n      border-bottom: 1px solid #8a8a8a;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: normal;\n      font-size: 22px;\n      text-shadow: 0 0 3px black; }\n  nav .nav-button {\n    display: block;\n    margin: 8px 0;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-button a {\n      display: block;\n      width: 100%;\n      height: 100%;\n      margin: 0;\n      padding: 12px 18px;\n      box-sizing: border-box;\n      background-color: #545454;\n      border-top: 1px solid #252424;\n      border-bottom: 1px solid #252424;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: bold;\n      font-size: 20px;\n      text-shadow: 0 0 3px black;\n      cursor: pointer;\n      transition: background-color linear 0.15s,\r border linear 0.15s,\r box-shadow linear 0.15s; }\n    nav .nav-button.active a {\n      background-color: #016bbe;\n      box-shadow: 0 0 3px #012c4f;\n      border-top: 1px solid #001321;\n      border-bottom: 1px solid #001321; }\n\n.pageSwap-enter {\n  opacity: 0; }\n\n.pageSwap-enter.pageSwap-enter-active {\n  opacity: 1;\n  transition: opacity linear 300ms; }\n\n.pageSwap-leave {\n  opacity: 1; }\n\n.pageSwap-leave.pageSwap-leave-active {\n  opacity: 0;\n  transition: opacity linear 300ms; }\n\nbody, html {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  padding: 0;\n  margin: 0;\n  height: calc(100% - 55px); }\n\n#app, main, body {\n  height: 100%; }\n\nbody {\n  font-family: 'Roboto',Arial, sans-serif;\n  margin-top: 55px; }\n\n#mainContent {\n  display: block;\n  width: 100%;\n  height: calc(100% - 55px);\n  margin: 0;\n  background-color: #dddddd;\n  overflow-y: auto;\n  position: absolute;\n  top: 55px;\n  left: 0; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Regular.ttf */ 4) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Bold.ttf */ 5) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Regular.ttf */ 6) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Bold.ttf */ 7) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n/* Navigation */\n/* UI */\n/* Navigation */\n/* UI */\nnav {\n  display: block;\n  background-color: #01579B;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  float: left;\n  height: 55px;\n  box-sizing: border-box;\n  z-index: 10;\n  border-bottom: 1px solid #014378;\n  border-top: 1px solid #016bbe;\n  box-shadow: 0 0 4px #909090; }\n  nav h1 {\n    display: inline-block;\n    margin: 0;\n    padding: 0 0 0 15px;\n    position: relative;\n    top: 50%;\n    transform: translateY(-50%);\n    box-sizing: border-box;\n    font-size: 24px;\n    color: white;\n    font-family: 'Roboto Condensed';\n    font-weight: normal;\n    vertical-align: top;\n    text-shadow: 0 0 3px #001e36; }\n  nav #hamburger {\n    margin-top: -1px;\n    display: inline-block;\n    width: 55px;\n    height: 55px;\n    border-right: 1px solid rgba(1, 59, 104, 0);\n    transition: background linear 0.2s, border linear 0.2s;\n    box-sizing: border-box; }\n    nav #hamburger:before {\n      content: \"\";\n      position: absolute;\n      left: 17px;\n      top: 19px;\n      width: 21px;\n      height: 2px;\n      background: white;\n      box-shadow: 0 7px 0 0 white,\r 0 14px 0 0 white; }\n    nav #hamburger.selected {\n      background-color: #014982;\n      border-right: 1px solid #013b68;\n      border-bottom: 1px solid #014982; }\n  nav #navOverlay {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 55px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    height: calc(100% - 55px);\n    width: 100%;\n    background-color: #3c3c3c;\n    opacity: 0.75;\n    z-index: 4; }\n  nav #navHolder {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 55px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    height: calc(100% - 55px);\n    width: 80%;\n    max-width: 300px;\n    min-width: 200px;\n    background-color: #3c3c3c;\n    transition: transform cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s;\n    z-index: 5;\n    border-right: 1px solid #2d2d2d;\n    border-top: 1px solid #2d2d2d;\n    overflow-y: auto;\n    list-style: none; }\n    nav #navHolder.hidden {\n      transform: translateX(-100%); }\n  nav .nav-header {\n    display: block;\n    margin: 0px 0 15px;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-header h3 {\n      display: block;\n      width: calc(100% - 40px);\n      height: 100%;\n      margin: 0 20px;\n      padding: 20px 5px;\n      box-sizing: border-box;\n      /* background-color: #545454; */\n      /* border-top: 1px solid #252424; */\n      border-bottom: 1px solid #8a8a8a;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: normal;\n      font-size: 22px;\n      text-shadow: 0 0 3px black; }\n  nav .nav-button {\n    display: block;\n    margin: 8px 0;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-button a {\n      display: block;\n      width: 100%;\n      height: 100%;\n      margin: 0;\n      padding: 12px 18px;\n      box-sizing: border-box;\n      background-color: #545454;\n      border-top: 1px solid #252424;\n      border-bottom: 1px solid #252424;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: bold;\n      font-size: 20px;\n      text-shadow: 0 0 3px black;\n      cursor: pointer;\n      transition: background-color linear 0.15s,\r border linear 0.15s,\r box-shadow linear 0.15s; }\n    nav .nav-button.active a {\n      background-color: #016bbe;\n      box-shadow: 0 0 3px #012c4f;\n      border-top: 1px solid #001321;\n      border-bottom: 1px solid #001321; }\n\n/* Navigation */\n/* UI */\n.ui-divider {\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n  border-bottom: 1px solid #b9b9b9;\n  height: 1px;\n  margin: 7px 0; }\n\n.ui-card {\n  margin: 20px;\n  width: calc(100% - 40px);\n  height: auto;\n  padding: 10px 15px;\n  background-color: white;\n  border-radius: 3px;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 6px #909090;\n  overflow: hidden; }\n  .ui-card .ui-header {\n    margin: 0;\n    padding: 5px;\n    display: block;\n    width: 100%;\n    color: #3b3b3b;\n    font-size: 22px;\n    font-weight: Normal;\n    font-family: 'Roboto'; }\n  .ui-card .ui-button {\n    display: inline-block;\n    width: auto;\n    text-transform: uppercase;\n    font-family: 'Roboto';\n    font-size: 16px;\n    color: #01579B;\n    text-decoration: none;\n    border-radius: 3px;\n    box-sizing: border-box;\n    padding: 5px 7px;\n    margin: 3px 5px;\n    float: right; }\n\n/* Navigation */\n/* UI */\n.pageSwap-enter {\n  opacity: 0; }\n\n.pageSwap-enter.pageSwap-enter-active {\n  opacity: 1;\n  transition: opacity linear 300ms; }\n\n.pageSwap-leave {\n  opacity: 1; }\n\n.pageSwap-leave.pageSwap-leave-active {\n  opacity: 0;\n  transition: opacity linear 300ms; }\n\n#navOverlay.nav-overlay-enter {\n  opacity: 0; }\n\n#navOverlay.nav-overlay-enter.nav-overlay-enter-active {\n  opacity: 0.75;\n  transition: opacity cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s; }\n\n#navOverlay.nav-overlay-leave {\n  opacity: 0.75; }\n\n#navOverlay.nav-overlay-leave.nav-overlay-leave-active {\n  opacity: 0;\n  transition: opacity cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s; }\n\n/* Navigation */\n/* UI */\n/*#homePage {\r\n    margin: 0;\r\n    padding: 25px;\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n\r\n    .button {\r\n        display: block;\r\n        width: 100%;\r\n        box-sizing: border-box;\r\n        height: 60px;\r\n        margin: 20px 0;\r\n        padding-top: 15px;\r\n        background-color: white;\r\n        border: 2px solid $school-color;\r\n        color: $school-color;\r\n        border-radius: 3px;\r\n        text-decoration: none;\r\n        font-family: 'Roboto';\r\n        text-align: center;\r\n        font-size: 22px;\r\n        font-weight: normal;\r\n    }\r\n}*/\nbody, html {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  padding: 0;\n  margin: 0;\n  height: calc(100% - 55px); }\n\n#app, main, body {\n  height: 100%; }\n\nbody {\n  font-family: 'Roboto',Arial, sans-serif;\n  margin-top: 55px; }\n\n#mainContent {\n  display: block;\n  width: 100%;\n  height: calc(100% - 55px);\n  margin: 0;\n  background-color: #f2f2f2;\n  overflow-y: auto;\n  position: absolute;\n  top: 55px;\n  left: 0; }\n", ""]);
 	
 	// exports
 
@@ -28294,15 +28273,214 @@
 
 /***/ },
 /* 243 */
+/*!****************************!*\
+  !*** ./src/pages/home.jsx ***!
+  \****************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Home = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 9);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _ui = __webpack_require__(/*! ../components/ui.jsx */ 244);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Home = function (_React$Component) {
+	    _inherits(Home, _React$Component);
+	
+	    function Home() {
+	        _classCallCheck(this, Home);
+	
+	        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+	    }
+	
+	    _createClass(Home, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    _ui.UI.Card,
+	                    null,
+	                    _react2.default.createElement(_ui.UI.Header, { text: 'Upcoming Classes' }),
+	                    _react2.default.createElement(_ui.UI.Divider, null),
+	                    _react2.default.createElement(_ui.UI.Button, { url: '/timetable', text: 'Timetable' }),
+	                    _react2.default.createElement(_ui.UI.Button, { url: '/timetable', text: 'Something' })
+	                ),
+	                _react2.default.createElement(
+	                    _ui.UI.Card,
+	                    null,
+	                    _react2.default.createElement(_ui.UI.Button, { url: '/News', text: 'News' })
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Home;
+	}(_react2.default.Component);
+	//id="homePage"
+	
+	exports.default = Home;
+	exports.Home = Home;
+
+/***/ },
+/* 244 */
+/*!*******************************!*\
+  !*** ./src/components/ui.jsx ***!
+  \*******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Divider = exports.Button = exports.Header = exports.Card = exports.UI = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 9);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Card = function (_React$Component) {
+	    _inherits(Card, _React$Component);
+	
+	    function Card() {
+	        _classCallCheck(this, Card);
+	
+	        return _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).apply(this, arguments));
+	    }
+	
+	    _createClass(Card, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "ui-card" },
+	                this.props.children
+	            );
+	        }
+	    }]);
+	
+	    return Card;
+	}(_react2.default.Component);
+	
+	var Header = function (_React$Component2) {
+	    _inherits(Header, _React$Component2);
+	
+	    function Header() {
+	        _classCallCheck(this, Header);
+	
+	        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+	    }
+	
+	    _createClass(Header, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "h4",
+	                { className: "ui-header" },
+	                this.props.text
+	            );
+	        }
+	    }]);
+	
+	    return Header;
+	}(_react2.default.Component);
+	
+	var Button = function (_React$Component3) {
+	    _inherits(Button, _React$Component3);
+	
+	    function Button() {
+	        _classCallCheck(this, Button);
+	
+	        return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
+	    }
+	
+	    _createClass(Button, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "a",
+	                { className: "ui-button", href: '#' + this.props.url },
+	                this.props.text
+	            );
+	        }
+	    }]);
+	
+	    return Button;
+	}(_react2.default.Component);
+	
+	var Divider = function (_React$Component4) {
+	    _inherits(Divider, _React$Component4);
+	
+	    function Divider() {
+	        _classCallCheck(this, Divider);
+	
+	        return _possibleConstructorReturn(this, (Divider.__proto__ || Object.getPrototypeOf(Divider)).apply(this, arguments));
+	    }
+	
+	    _createClass(Divider, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement("span", { className: "ui-divider" });
+	        }
+	    }]);
+	
+	    return Divider;
+	}(_react2.default.Component);
+	
+	var UI = {
+	    'Button': Button,
+	    'Header': Header,
+	    'Card': Card,
+	    'Divider': Divider
+	};
+	
+	exports.default = UI;
+	exports.UI = UI;
+	exports.Card = Card;
+	exports.Header = Header;
+	exports.Button = Button;
+	exports.Divider = Divider;
+
+/***/ },
+/* 245 */
 /*!******************************************************!*\
   !*** ./~/react-addons-css-transition-group/index.js ***!
   \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(/*! react/lib/ReactCSSTransitionGroup */ 244);
+	module.exports = __webpack_require__(/*! react/lib/ReactCSSTransitionGroup */ 246);
 
 /***/ },
-/* 244 */
+/* 246 */
 /*!************************************************!*\
   !*** ./~/react/lib/ReactCSSTransitionGroup.js ***!
   \************************************************/
@@ -28325,8 +28503,8 @@
 	
 	var React = __webpack_require__(/*! ./React */ 10);
 	
-	var ReactTransitionGroup = __webpack_require__(/*! ./ReactTransitionGroup */ 245);
-	var ReactCSSTransitionGroupChild = __webpack_require__(/*! ./ReactCSSTransitionGroupChild */ 247);
+	var ReactTransitionGroup = __webpack_require__(/*! ./ReactTransitionGroup */ 247);
+	var ReactCSSTransitionGroupChild = __webpack_require__(/*! ./ReactCSSTransitionGroupChild */ 249);
 	
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -28397,7 +28575,7 @@
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 245 */
+/* 247 */
 /*!*********************************************!*\
   !*** ./~/react/lib/ReactTransitionGroup.js ***!
   \*********************************************/
@@ -28420,7 +28598,7 @@
 	
 	var React = __webpack_require__(/*! ./React */ 10);
 	var ReactInstanceMap = __webpack_require__(/*! ./ReactInstanceMap */ 127);
-	var ReactTransitionChildMapping = __webpack_require__(/*! ./ReactTransitionChildMapping */ 246);
+	var ReactTransitionChildMapping = __webpack_require__(/*! ./ReactTransitionChildMapping */ 248);
 	
 	var emptyFunction = __webpack_require__(/*! fbjs/lib/emptyFunction */ 20);
 	
@@ -28652,7 +28830,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 11)))
 
 /***/ },
-/* 246 */
+/* 248 */
 /*!****************************************************!*\
   !*** ./~/react/lib/ReactTransitionChildMapping.js ***!
   \****************************************************/
@@ -28764,7 +28942,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 11)))
 
 /***/ },
-/* 247 */
+/* 249 */
 /*!*****************************************************!*\
   !*** ./~/react/lib/ReactCSSTransitionGroupChild.js ***!
   \*****************************************************/
@@ -28786,8 +28964,8 @@
 	var React = __webpack_require__(/*! ./React */ 10);
 	var ReactDOM = __webpack_require__(/*! ./ReactDOM */ 43);
 	
-	var CSSCore = __webpack_require__(/*! fbjs/lib/CSSCore */ 248);
-	var ReactTransitionEvents = __webpack_require__(/*! ./ReactTransitionEvents */ 249);
+	var CSSCore = __webpack_require__(/*! fbjs/lib/CSSCore */ 250);
+	var ReactTransitionEvents = __webpack_require__(/*! ./ReactTransitionEvents */ 251);
 	
 	var onlyChild = __webpack_require__(/*! ./onlyChild */ 41);
 	
@@ -28939,7 +29117,7 @@
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 248 */
+/* 250 */
 /*!*******************************!*\
   !*** ./~/fbjs/lib/CSSCore.js ***!
   \*******************************/
@@ -29069,7 +29247,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 11)))
 
 /***/ },
-/* 249 */
+/* 251 */
 /*!**********************************************!*\
   !*** ./~/react/lib/ReactTransitionEvents.js ***!
   \**********************************************/
@@ -29150,7 +29328,7 @@
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 250 */
+/* 252 */
 /*!********************************!*\
   !*** ./src/components/Nav.jsx ***!
   \********************************/
@@ -29169,6 +29347,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactAddonsCssTransitionGroup = __webpack_require__(/*! react-addons-css-transition-group */ 245);
+	
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29183,7 +29365,7 @@
 	    pages: [{
 	        id: 1,
 	        title: 'CHS PE',
-	        nav_text: 'Home',
+	        nav_text: 'Dashboard',
 	        url: '/'
 	    }, {
 	        id: 2,
@@ -29192,11 +29374,11 @@
 	    }, {
 	        id: 3,
 	        title: 'Timetable',
-	        url: '/time'
+	        url: '/timetable'
 	    }]
 	}, {
 	    id: 2,
-	    heading: "Settings",
+	    heading: "SETTINGS",
 	    pages: [{
 	        id: 4,
 	        title: 'Settings',
@@ -29267,6 +29449,7 @@
 	                    null,
 	                    getPageTitle(this.props.loc)
 	                ),
+	                _react2.default.createElement(NavOverlay, { open: this.state.open, clickHandler: this.closeNav }),
 	                _react2.default.createElement(
 	                    'ul',
 	                    { id: 'navHolder', className: this.state.open ? '' : 'hidden' },
@@ -29336,6 +29519,31 @@
 	    }]);
 	
 	    return NavHeader;
+	}(_react2.default.Component);
+	
+	var NavOverlay = function (_React$Component4) {
+	    _inherits(NavOverlay, _React$Component4);
+	
+	    function NavOverlay() {
+	        _classCallCheck(this, NavOverlay);
+	
+	        return _possibleConstructorReturn(this, (NavOverlay.__proto__ || Object.getPrototypeOf(NavOverlay)).apply(this, arguments));
+	    }
+	
+	    _createClass(NavOverlay, [{
+	        key: 'render',
+	        value: function render() {
+	            var overlay = void 0;
+	            if (this.props.open) overlay = _react2.default.createElement('div', { id: 'navOverlay', onClick: this.props.clickHandler });
+	            return _react2.default.createElement(
+	                _reactAddonsCssTransitionGroup2.default,
+	                { transitionName: 'nav-overlay', transitionEnterTimeout: 250, transitionLeaveTimeout: 250 },
+	                overlay
+	            );
+	        }
+	    }]);
+	
+	    return NavOverlay;
 	}(_react2.default.Component);
 	
 	exports.default = Nav;

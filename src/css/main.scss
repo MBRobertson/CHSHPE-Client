@@ -1,7 +1,11 @@
 @import './fonts/fonts.scss';
 @import './config.scss';
 @import './nav.scss';
+@import './ui.scss';
+
 @import './animations.scss';
+
+@import './pages/home.scss';
 
 body,html {
     -webkit-touch-callout: none;
@@ -28,7 +32,7 @@ body {
     width: 100%;
     height: calc(100% - #{$nav-height});
     margin: 0;
-    background-color: #dddddd;
+    background-color: $background-color;
     overflow-y: auto;
     position: absolute;
     top: $nav-height;

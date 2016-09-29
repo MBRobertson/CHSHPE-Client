@@ -1,21 +1,5 @@
-// .pageSwap-enter {
-//     transform: translateX(100%);
-//     //border-left: 1px solid #343434;
-// }
-//
-// .pageSwap-enter.pageSwap-enter-active {
-//     transform: translateX(0);
-//     transition: transform linear 300ms;
-// }
-//
-// .pageSwap-leave {
-//     transform: translateX(0);
-// }
-//
-// .pageSwap-leave.pageSwap-leave-active {
-//     transform: translateX(-100%);
-//     transition: transform linear 300ms;
-// }
+@import './config.scss';
+
 .pageSwap-enter {
     opacity: 0;
     //border-left: 1px solid #343434;
@@ -33,4 +17,23 @@
 .pageSwap-leave.pageSwap-leave-active {
     opacity: 0;
     transition: opacity linear 300ms;
+}
+
+//Nav overlays
+#navOverlay.nav-overlay-enter {
+    opacity: 0;
+}
+
+#navOverlay.nav-overlay-enter.nav-overlay-enter-active {
+    opacity: $nav-overlay-opacity;
+    transition: opacity cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s;
+}
+
+#navOverlay.nav-overlay-leave {
+    opacity: $nav-overlay-opacity;
+}
+
+#navOverlay.nav-overlay-leave.nav-overlay-leave-active {
+    opacity: 0;
+    transition: opacity cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s;
 }

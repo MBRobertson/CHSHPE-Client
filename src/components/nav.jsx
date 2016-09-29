@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 let pages = [
     {
@@ -8,7 +9,7 @@ let pages = [
             {
                 id: 1,
                 title: 'CHS PE',
-                nav_text: 'Home',
+                nav_text: 'Dashboard',
                 url: '/'
             },
             {
@@ -19,13 +20,13 @@ let pages = [
             {
                 id: 3,
                 title: 'Timetable',
-                url: '/time'
+                url: '/timetable'
             }
         ]
     },
     {
         id: 2,
-        heading: "Settings",
+        heading: "SETTINGS",
         pages: [
             {
                 id: 4,
@@ -84,6 +85,7 @@ class Nav extends React.Component {
             <nav>
                 <span id="hamburger" className={this.state.open ? 'selected' : ''} onClick={this.toggleNav}/>
                 <h1>{getPageTitle(this.props.loc)}</h1>
+                <NavOverlay open={this.state.open} clickHandler={this.closeNav}/>
                 <ul id="navHolder" className={this.state.open ? '' : 'hidden'}>
                     {pages.map((pageSet) => {
                         return [
@@ -112,6 +114,19 @@ class NavHeader extends React.Component {
     render() {
         return (
             <li className="nav-header"><h3>{this.props.text}</h3></li>
+        );
+    }
+}
+
+class NavOverlay extends React.Component {
+    render() {
+        let overlay;
+        if (this.props.open)
+            overlay = (<div id="navOverlay" onClick={this.props.clickHandler}></div>)
+        return (
+            <ReactCSSTransitionGroup transitionName="nav-overlay" transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+                {overlay}
+            </ReactCSSTransitionGroup>
         );
     }
 }
