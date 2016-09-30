@@ -196,7 +196,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Regular.ttf */ 4) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Bold.ttf */ 5) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Regular.ttf */ 6) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Bold.ttf */ 7) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n/* Navigation */\n/* UI */\n/* Navigation */\n/* UI */\nnav {\n  display: block;\n  background-color: #01579B;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  float: left;\n  height: 55px;\n  box-sizing: border-box;\n  z-index: 10;\n  border-bottom: 1px solid #014378;\n  border-top: 1px solid #016bbe;\n  box-shadow: 0 0 4px #909090; }\n  nav h1 {\n    display: inline-block;\n    margin: 0;\n    padding: 0 0 0 15px;\n    position: relative;\n    top: 50%;\n    transform: translateY(-50%);\n    box-sizing: border-box;\n    font-size: 24px;\n    color: white;\n    font-family: 'Roboto Condensed';\n    font-weight: normal;\n    vertical-align: top;\n    text-shadow: 0 0 3px #001e36; }\n  nav #hamburger {\n    margin-top: -1px;\n    display: inline-block;\n    width: 55px;\n    height: 55px;\n    border-right: 1px solid rgba(1, 59, 104, 0);\n    transition: background linear 0.2s, border linear 0.2s;\n    box-sizing: border-box; }\n    nav #hamburger:before {\n      content: \"\";\n      position: absolute;\n      left: 17px;\n      top: 19px;\n      width: 21px;\n      height: 2px;\n      background: white;\n      box-shadow: 0 7px 0 0 white,\r 0 14px 0 0 white; }\n    nav #hamburger.selected {\n      background-color: #014982;\n      border-right: 1px solid #013b68;\n      border-bottom: 1px solid #014982; }\n  nav #navOverlay {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 55px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    height: calc(100% - 55px);\n    width: 100%;\n    background-color: #3c3c3c;\n    opacity: 0.75;\n    z-index: 4; }\n  nav #navHolder {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 55px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    height: calc(100% - 55px);\n    width: 80%;\n    max-width: 300px;\n    min-width: 200px;\n    background-color: #3c3c3c;\n    transition: transform cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s;\n    z-index: 5;\n    border-right: 1px solid #2d2d2d;\n    border-top: 1px solid #2d2d2d;\n    overflow-y: auto;\n    list-style: none; }\n    nav #navHolder.hidden {\n      transform: translateX(-100%); }\n  nav .nav-header {\n    display: block;\n    margin: 0px 0 15px;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-header h3 {\n      display: block;\n      width: calc(100% - 40px);\n      height: 100%;\n      margin: 0 20px;\n      padding: 20px 5px;\n      box-sizing: border-box;\n      /* background-color: #545454; */\n      /* border-top: 1px solid #252424; */\n      border-bottom: 1px solid #8a8a8a;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: normal;\n      font-size: 22px;\n      text-shadow: 0 0 3px black; }\n  nav .nav-button {\n    display: block;\n    margin: 8px 0;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-button a {\n      display: block;\n      width: 100%;\n      height: 100%;\n      margin: 0;\n      padding: 12px 18px;\n      box-sizing: border-box;\n      background-color: #545454;\n      border-top: 1px solid #252424;\n      border-bottom: 1px solid #252424;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: bold;\n      font-size: 20px;\n      text-shadow: 0 0 3px black;\n      cursor: pointer;\n      transition: background-color linear 0.15s,\r border linear 0.15s,\r box-shadow linear 0.15s; }\n    nav .nav-button.active a {\n      background-color: #016bbe;\n      box-shadow: 0 0 3px #012c4f;\n      border-top: 1px solid #001321;\n      border-bottom: 1px solid #001321; }\n\n/* Navigation */\n/* UI */\n.ui-divider {\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n  border-bottom: 1px solid #b9b9b9;\n  height: 1px;\n  margin: 7px 0; }\n\n.ui-card {\n  margin: 20px;\n  width: calc(100% - 40px);\n  height: auto;\n  padding: 10px 15px;\n  background-color: white;\n  border-radius: 3px;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 6px #909090;\n  overflow: hidden; }\n  .ui-card .ui-header {\n    margin: 0;\n    padding: 5px;\n    display: block;\n    width: 100%;\n    color: #3b3b3b;\n    font-size: 22px;\n    font-weight: Normal;\n    font-family: 'Roboto'; }\n  .ui-card .ui-button {\n    display: inline-block;\n    width: auto;\n    text-transform: uppercase;\n    font-family: 'Roboto';\n    font-size: 16px;\n    color: #01579B;\n    text-decoration: none;\n    border-radius: 3px;\n    box-sizing: border-box;\n    padding: 5px 7px;\n    margin: 3px 5px;\n    float: right; }\n\n/* Navigation */\n/* UI */\n.pageSwap-enter {\n  opacity: 0; }\n\n.pageSwap-enter.pageSwap-enter-active {\n  opacity: 1;\n  transition: opacity linear 300ms; }\n\n.pageSwap-leave {\n  opacity: 1; }\n\n.pageSwap-leave.pageSwap-leave-active {\n  opacity: 0;\n  transition: opacity linear 300ms; }\n\n#navOverlay.nav-overlay-enter {\n  opacity: 0; }\n\n#navOverlay.nav-overlay-enter.nav-overlay-enter-active {\n  opacity: 0.75;\n  transition: opacity cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s; }\n\n#navOverlay.nav-overlay-leave {\n  opacity: 0.75; }\n\n#navOverlay.nav-overlay-leave.nav-overlay-leave-active {\n  opacity: 0;\n  transition: opacity cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s; }\n\n/* Navigation */\n/* UI */\n/*#homePage {\r\n    margin: 0;\r\n    padding: 25px;\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n\r\n    .button {\r\n        display: block;\r\n        width: 100%;\r\n        box-sizing: border-box;\r\n        height: 60px;\r\n        margin: 20px 0;\r\n        padding-top: 15px;\r\n        background-color: white;\r\n        border: 2px solid $school-color;\r\n        color: $school-color;\r\n        border-radius: 3px;\r\n        text-decoration: none;\r\n        font-family: 'Roboto';\r\n        text-align: center;\r\n        font-size: 22px;\r\n        font-weight: normal;\r\n    }\r\n}*/\nbody, html {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  padding: 0;\n  margin: 0;\n  height: calc(100% - 55px); }\n\n#app, main, body {\n  height: 100%; }\n\nbody {\n  font-family: 'Roboto',Arial, sans-serif;\n  margin-top: 55px; }\n\n#mainContent {\n  display: block;\n  width: 100%;\n  height: calc(100% - 55px);\n  margin: 0;\n  background-color: #f2f2f2;\n  overflow-y: auto;\n  position: absolute;\n  top: 55px;\n  left: 0; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Regular.ttf */ 4) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto';\n  src: url(" + __webpack_require__(/*! ./fonts/Roboto-Bold.ttf */ 5) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Regular.ttf */ 6) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: 'Roboto Condensed';\n  src: url(" + __webpack_require__(/*! ./fonts/RobotoCondensed-Bold.ttf */ 7) + ") format(\"truetype\");\n  font-weight: bold;\n  font-style: normal; }\n\n/* Navigation */\n/* UI */\n/* Navigation */\n/* UI */\nnav {\n  display: block;\n  background-color: #01579B;\n  width: 100%;\n  position: fixed;\n  top: 0;\n  left: 0;\n  float: left;\n  height: 55px;\n  box-sizing: border-box;\n  z-index: 10;\n  border-bottom: 1px solid #014378;\n  border-top: 1px solid #016bbe;\n  box-shadow: 0 0 4px #909090; }\n  nav h1 {\n    display: inline-block;\n    margin: 0;\n    padding: 0 0 0 15px;\n    position: relative;\n    top: 50%;\n    transform: translateY(-50%);\n    box-sizing: border-box;\n    font-size: 24px;\n    color: white;\n    font-family: 'Roboto Condensed';\n    font-weight: normal;\n    vertical-align: top;\n    text-shadow: 0 0 3px #001e36; }\n  nav #hamburger {\n    margin-top: -1px;\n    display: inline-block;\n    width: 55px;\n    height: 55px;\n    border-right: 1px solid rgba(1, 59, 104, 0);\n    transition: background linear 0.2s, border linear 0.2s;\n    box-sizing: border-box; }\n    nav #hamburger:before {\n      content: \"\";\n      position: absolute;\n      left: 17px;\n      top: 19px;\n      width: 21px;\n      height: 2px;\n      background: white;\n      box-shadow: 0 7px 0 0 white,\r 0 14px 0 0 white; }\n    nav #hamburger.selected {\n      background-color: #014982;\n      border-right: 1px solid #013b68;\n      border-bottom: 1px solid #014982; }\n  nav #navOverlay {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 55px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    height: calc(100% - 55px);\n    width: 100%;\n    background-color: #3c3c3c;\n    opacity: 0.75;\n    z-index: 4; }\n  nav #navHolder {\n    display: block;\n    position: fixed;\n    float: left;\n    top: 55px;\n    left: 0;\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    height: calc(100% - 55px);\n    width: 80%;\n    max-width: 300px;\n    min-width: 200px;\n    background-color: #3c3c3c;\n    transition: transform cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s;\n    z-index: 5;\n    border-right: 1px solid #2d2d2d;\n    border-top: 1px solid #2d2d2d;\n    overflow-y: auto;\n    list-style: none; }\n    nav #navHolder.dragging {\n      transition: none; }\n    nav #navHolder.hidden {\n      transform: translateX(-100%); }\n    nav #navHolder #navDragger {\n      display: block;\n      width: 50px;\n      height: 100%;\n      position: fixed;\n      top: 0;\n      left: 100%;\n      background-color: none; }\n  nav .nav-header {\n    display: block;\n    margin: 0px 0 15px;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-header h3 {\n      display: block;\n      width: calc(100% - 40px);\n      height: 100%;\n      margin: 0 20px;\n      padding: 20px 5px;\n      box-sizing: border-box;\n      /* background-color: #545454; */\n      /* border-top: 1px solid #252424; */\n      border-bottom: 1px solid #8a8a8a;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: normal;\n      font-size: 22px;\n      text-shadow: 0 0 3px black; }\n  nav .nav-button {\n    display: block;\n    margin: 8px 0;\n    padding: 0;\n    width: 100%;\n    height: 50px; }\n    nav .nav-button a {\n      display: block;\n      width: 100%;\n      height: 100%;\n      margin: 0;\n      padding: 12px 18px;\n      box-sizing: border-box;\n      background-color: #545454;\n      border-top: 1px solid #252424;\n      border-bottom: 1px solid #252424;\n      color: white;\n      text-decoration: none;\n      font-family: 'Roboto Condensed';\n      font-weight: bold;\n      font-size: 20px;\n      text-shadow: 0 0 3px black;\n      cursor: pointer;\n      transition: background-color linear 0.15s,\r border linear 0.15s,\r box-shadow linear 0.15s; }\n    nav .nav-button.active a {\n      background-color: #016bbe;\n      box-shadow: 0 0 3px #012c4f;\n      border-top: 1px solid #001321;\n      border-bottom: 1px solid #001321; }\n\n/* Navigation */\n/* UI */\n.ui-divider {\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n  border-bottom: 1px solid #b9b9b9;\n  height: 1px;\n  margin: 7px 0; }\n\n.ui-card {\n  margin: 20px;\n  width: calc(100% - 40px);\n  height: auto;\n  padding: 10px 15px;\n  background-color: white;\n  border-radius: 3px;\n  box-sizing: border-box;\n  box-shadow: 1px 1px 6px #909090;\n  overflow: hidden; }\n  .ui-card .ui-header {\n    margin: 0;\n    padding: 5px;\n    display: block;\n    width: 100%;\n    color: #3b3b3b;\n    font-size: 22px;\n    font-weight: Normal;\n    font-family: 'Roboto'; }\n  .ui-card .ui-button {\n    display: inline-block;\n    width: auto;\n    text-transform: uppercase;\n    font-family: 'Roboto';\n    font-size: 16px;\n    color: #01579B;\n    text-decoration: none;\n    border-radius: 3px;\n    box-sizing: border-box;\n    padding: 5px 7px;\n    margin: 3px 5px;\n    float: right; }\n\n/* Navigation */\n/* UI */\n.pageSwap-enter {\n  opacity: 0; }\n\n.pageSwap-enter.pageSwap-enter-active {\n  opacity: 1;\n  transition: opacity linear 300ms; }\n\n.pageSwap-leave {\n  opacity: 1; }\n\n.pageSwap-leave.pageSwap-leave-active {\n  opacity: 0;\n  transition: opacity linear 300ms; }\n\n#navOverlay.nav-overlay-enter {\n  opacity: 0; }\n\n#navOverlay.nav-overlay-enter.nav-overlay-enter-active {\n  opacity: 0.75;\n  transition: opacity cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s; }\n\n#navOverlay.nav-overlay-leave {\n  opacity: 0.75; }\n\n#navOverlay.nav-overlay-leave.nav-overlay-leave-active {\n  opacity: 0;\n  transition: opacity cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.25s; }\n\n/* Navigation */\n/* UI */\n/*#homePage {\r\n    margin: 0;\r\n    padding: 25px;\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n\r\n    .button {\r\n        display: block;\r\n        width: 100%;\r\n        box-sizing: border-box;\r\n        height: 60px;\r\n        margin: 20px 0;\r\n        padding-top: 15px;\r\n        background-color: white;\r\n        border: 2px solid $school-color;\r\n        color: $school-color;\r\n        border-radius: 3px;\r\n        text-decoration: none;\r\n        font-family: 'Roboto';\r\n        text-align: center;\r\n        font-size: 22px;\r\n        font-weight: normal;\r\n    }\r\n}*/\nbody, html {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  padding: 0;\n  margin: 0;\n  height: calc(100% - 55px); }\n\n#app, main, body {\n  height: 100%; }\n\nbody {\n  font-family: 'Roboto',Arial, sans-serif;\n  margin-top: 55px; }\n\n#mainContent {\n  display: block;\n  width: 100%;\n  height: calc(100% - 55px);\n  margin: 0;\n  background-color: #f2f2f2;\n  overflow-y: auto;\n  position: absolute;\n  top: 55px;\n  left: 0; }\n", ""]);
 	
 	// exports
 
@@ -29398,6 +29398,67 @@
 	    return '';
 	};
 	
+	var target = void 0;
+	var handler = void 0;
+	var openState = false;
+	var trackedTouch = null;
+	var xOrigin = 0;
+	var offset = 0;
+	
+	var touchStart = function touchStart(ev) {
+	    if (trackedTouch == null) {
+	        trackedTouch = ev.changedTouches[0];
+	        target.classList.add('dragging');
+	        offset = 0;
+	        xOrigin = trackedTouch.pageX;
+	        console.log("Now tracking!");
+	        console.log(trackedTouch);
+	    }
+	};
+	
+	var touchEnd = function touchEnd(ev) {
+	    if (trackedTouch != null) {
+	        for (var i = 0; i < ev.changedTouches.length; i++) {
+	            var touch = ev.changedTouches.item(i);
+	            if (touch.identifier == trackedTouch.identifier) {
+	                // TODO: Do something with removed touch data
+	                //target.style = "";
+	                target.classList.remove('dragging');
+	                handler(target, offset);
+	                trackedTouch = null;
+	                xOrigin = 0;
+	                offset = 0;
+	                console.log("Stopped tracking!");
+	            }
+	        }
+	    }
+	    //console.log(ev);
+	};
+	
+	var setOffset = function setOffset() {
+	    if (openState) {
+	        target.style = "transform: translateX(0%) translateX(" + offset + "px)";
+	    } else {
+	        target.style = "transform: translateX(-100%) translateX(" + offset + "px)";
+	    }
+	};
+	
+	var touchMove = function touchMove(ev) {
+	    if (trackedTouch != null) {
+	        for (var i = 0; i < ev.changedTouches.length; i++) {
+	            var touch = ev.changedTouches.item(i);
+	            offset = touch.pageX - xOrigin;
+	            if (offset > 0 && openState) offset = 0;
+	            if (offset < -target.clientWidth && openState) offset = -target.clientWidth;
+	
+	            if (offset < 0 && !openState) offset = 0;
+	            if (offset > target.clientWidth && !openState) offset = target.clientWidth;
+	            //Do something with touch
+	            setOffset();
+	        }
+	    }
+	};
+	
 	var Nav = function (_React$Component) {
 	    _inherits(Nav, _React$Component);
 	
@@ -29412,10 +29473,47 @@
 	
 	        _this.toggleNav = _this.toggleNav.bind(_this);
 	        _this.closeNav = _this.closeNav.bind(_this);
+	        _this.handleNavDrag = _this.handleNavDrag.bind(_this);
 	        return _this;
 	    }
 	
 	    _createClass(Nav, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var el = this.refs.navHolder;
+	
+	            target = el;
+	            openState = this.state.open;
+	            handler = this.handleNavDrag;
+	
+	            el.addEventListener('touchstart', touchStart, false);
+	            el.addEventListener('touchend', touchEnd, false);
+	            el.addEventListener('touchcancel', touchEnd, false);
+	
+	            el.addEventListener('touchmove', touchMove, false);
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            el.removeEventListener('touchstart', touchStart);
+	            el.removeEventListener('touchend', touchEnd);
+	            el.removeEventListener('touchcancel', touchEnd);
+	            el.removeEventListener('touchmove', touchMove);
+	        }
+	    }, {
+	        key: 'handleNavDrag',
+	        value: function handleNavDrag(target, offset) {
+	            if (Math.abs(offset) >= Math.abs(target.clientWidth / 3)) {
+	                if (this.state.open) {
+	                    this.closeNav();
+	                } else if (!this.state.open) {
+	                    this.openNav();
+	                }
+	            }
+	
+	            target.style = "";
+	        }
+	    }, {
 	        key: 'toggleNav',
 	        value: function toggleNav() {
 	            if (this.state.open) {
@@ -29429,6 +29527,13 @@
 	            }
 	        }
 	    }, {
+	        key: 'openNav',
+	        value: function openNav() {
+	            this.setState({
+	                open: open
+	            });
+	        }
+	    }, {
 	        key: 'closeNav',
 	        value: function closeNav() {
 	            this.setState({
@@ -29440,6 +29545,7 @@
 	        value: function render() {
 	            var _this2 = this;
 	
+	            openState = this.state.open;
 	            return _react2.default.createElement(
 	                'nav',
 	                null,
@@ -29452,7 +29558,8 @@
 	                _react2.default.createElement(NavOverlay, { open: this.state.open, clickHandler: this.closeNav }),
 	                _react2.default.createElement(
 	                    'ul',
-	                    { id: 'navHolder', className: this.state.open ? '' : 'hidden' },
+	                    { ref: 'navHolder', id: 'navHolder', className: this.state.open ? '' : 'hidden' },
+	                    _react2.default.createElement('span', { id: 'navDragger' }),
 	                    pages.map(function (pageSet) {
 	                        return [_react2.default.createElement(NavHeader, { text: pageSet.heading, key: pageSet.id }), pageSet.pages.map(function (page) {
 	                            return _react2.default.createElement(NavButton, { clickHandler: _this2.closeNav, key: page.id, page: page, curPage: _this2.props.loc.pathname });
