@@ -51,6 +51,67 @@ let getPageTitle = (location) => {
     return '';
 }
 
+let target;
+let handler;
+let openState = false;
+let trackedTouch = null;
+let xOrigin = 0;
+let offset = 0;
+
+let touchStart = (ev) => {
+    if (trackedTouch == null) {
+        trackedTouch = ev.changedTouches[0];
+        target.classList.add('dragging');
+        offset = 0;
+        xOrigin = trackedTouch.pageX;
+        console.log("Now tracking!")
+        console.log(trackedTouch);
+    }
+}
+
+let touchEnd = (ev) => {
+    if (trackedTouch != null) {
+        for (var i = 0; i < ev.changedTouches.length; i++) {
+            let touch = ev.changedTouches.item(i);
+            if (touch.identifier == trackedTouch.identifier) {
+                // TODO: Do something with removed touch data
+                //target.style = "";
+                target.classList.remove('dragging');
+                handler(target, offset)
+                trackedTouch = null;
+                xOrigin = 0;
+                offset = 0;
+                console.log("Stopped tracking!");
+            }
+        }
+    }
+    //console.log(ev);
+}
+
+let setOffset = () => {
+    if (openState) {
+        target.style = "transform: translateX(0%) translateX(" + offset + "px)";
+    } else {
+        target.style = "transform: translateX(-100%) translateX(" + offset + "px)";
+    }
+}
+
+let touchMove = (ev) => {
+    if (trackedTouch != null)  {
+        for (var i = 0; i < ev.changedTouches.length; i++) {
+            let touch = ev.changedTouches.item(i);
+            offset = touch.pageX - xOrigin;
+            if (offset > 0 && openState) offset = 0;
+            if (offset < -target.clientWidth && openState) offset = -target.clientWidth
+
+            if (offset < 0 && !openState) offset = 0;
+            if (offset > target.clientWidth && !openState) offset = target.clientWidth
+            //Do something with touch
+            setOffset();
+        }
+    }
+}
+
 class Nav extends React.Component {
     constructor(props) {
         super(props);
@@ -60,7 +121,42 @@ class Nav extends React.Component {
 
         this.toggleNav = this.toggleNav.bind(this);
         this.closeNav = this.closeNav.bind(this);
+        this.handleNavDrag = this.handleNavDrag.bind(this);
     }
+
+    componentDidMount() {
+        let el = this.refs.navHolder;
+
+        target = el;
+        openState = this.state.open;
+        handler = this.handleNavDrag;
+
+        el.addEventListener('touchstart', touchStart, false);
+        el.addEventListener('touchend', touchEnd, false);
+        el.addEventListener('touchcancel', touchEnd, false);
+
+        el.addEventListener('touchmove', touchMove, false);
+    }
+
+    componentWillUnmount() {
+        el.removeEventListener('touchstart', touchStart);
+        el.removeEventListener('touchend', touchEnd);
+        el.removeEventListener('touchcancel', touchEnd);
+        el.removeEventListener('touchmove', touchMove);
+    }
+
+    handleNavDrag(target, offset) {
+        if ((Math.abs(offset) >= Math.abs(target.clientWidth/3))) {
+            if (this.state.open) {
+                this.closeNav();
+            } else if (!this.state.open) {
+                this.openNav();
+            }
+        }
+
+        target.style = "";
+    }
+
 
     toggleNav() {
         if (this.state.open) {
@@ -74,19 +170,27 @@ class Nav extends React.Component {
         }
     }
 
+    openNav() {
+        this.setState({
+            open: open
+        });
+    }
+
     closeNav() {
         this.setState({
             open: false
-        })
+        });
     }
 
     render() {
+        openState = this.state.open;
         return (
             <nav>
                 <span id="hamburger" className={this.state.open ? 'selected' : ''} onClick={this.toggleNav}/>
                 <h1>{getPageTitle(this.props.loc)}</h1>
                 <NavOverlay open={this.state.open} clickHandler={this.closeNav}/>
-                <ul id="navHolder" className={this.state.open ? '' : 'hidden'}>
+                <ul ref="navHolder" id="navHolder" className={this.state.open ? '' : 'hidden'}>
+                    <span id="navDragger"></span>
                     {pages.map((pageSet) => {
                         return [
                             <NavHeader text={pageSet.heading} key={pageSet.id}/>,
