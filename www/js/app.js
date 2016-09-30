@@ -29486,19 +29486,19 @@
 	            openState = this.state.open;
 	            handler = this.handleNavDrag;
 	
-	            el.addEventListener('touchstart', touchStart, false);
-	            el.addEventListener('touchend', touchEnd, false);
-	            el.addEventListener('touchcancel', touchEnd, false);
+	            //el.addEventListener('touchstart', touchStart, false);
+	            //el.addEventListener('touchend', touchEnd, false);
+	            //el.addEventListener('touchcancel', touchEnd, false);
 	
-	            el.addEventListener('touchmove', touchMove, false);
+	            //el.addEventListener('touchmove', touchMove, false);
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
-	            el.removeEventListener('touchstart', touchStart);
-	            el.removeEventListener('touchend', touchEnd);
-	            el.removeEventListener('touchcancel', touchEnd);
-	            el.removeEventListener('touchmove', touchMove);
+	            //el.removeEventListener('touchstart', touchStart);
+	            //el.removeEventListener('touchend', touchEnd);
+	            //el.removeEventListener('touchcancel', touchEnd);
+	            //el.removeEventListener('touchmove', touchMove);
 	        }
 	    }, {
 	        key: 'handleNavDrag',
@@ -29559,7 +29559,6 @@
 	                _react2.default.createElement(
 	                    'ul',
 	                    { ref: 'navHolder', id: 'navHolder', className: this.state.open ? '' : 'hidden' },
-	                    _react2.default.createElement('span', { id: 'navDragger' }),
 	                    pages.map(function (pageSet) {
 	                        return [_react2.default.createElement(NavHeader, { text: pageSet.heading, key: pageSet.id }), pageSet.pages.map(function (page) {
 	                            return _react2.default.createElement(NavButton, { clickHandler: _this2.closeNav, key: page.id, page: page, curPage: _this2.props.loc.pathname });

@@ -131,18 +131,18 @@ class Nav extends React.Component {
         openState = this.state.open;
         handler = this.handleNavDrag;
 
-        el.addEventListener('touchstart', touchStart, false);
-        el.addEventListener('touchend', touchEnd, false);
-        el.addEventListener('touchcancel', touchEnd, false);
+        //el.addEventListener('touchstart', touchStart, false);
+        //el.addEventListener('touchend', touchEnd, false);
+        //el.addEventListener('touchcancel', touchEnd, false);
 
-        el.addEventListener('touchmove', touchMove, false);
+        //el.addEventListener('touchmove', touchMove, false);
     }
 
     componentWillUnmount() {
-        el.removeEventListener('touchstart', touchStart);
-        el.removeEventListener('touchend', touchEnd);
-        el.removeEventListener('touchcancel', touchEnd);
-        el.removeEventListener('touchmove', touchMove);
+        //el.removeEventListener('touchstart', touchStart);
+        //el.removeEventListener('touchend', touchEnd);
+        //el.removeEventListener('touchcancel', touchEnd);
+        //el.removeEventListener('touchmove', touchMove);
     }
 
     handleNavDrag(target, offset) {
@@ -190,7 +190,7 @@ class Nav extends React.Component {
                 <h1>{getPageTitle(this.props.loc)}</h1>
                 <NavOverlay open={this.state.open} clickHandler={this.closeNav}/>
                 <ul ref="navHolder" id="navHolder" className={this.state.open ? '' : 'hidden'}>
-                    <span id="navDragger"></span>
+                    {/* <span id="navDragger"></span> */}
                     {pages.map((pageSet) => {
                         return [
                             <NavHeader text={pageSet.heading} key={pageSet.id}/>,
