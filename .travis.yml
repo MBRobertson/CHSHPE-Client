@@ -12,3 +12,4 @@ deploy:
   domain: mbrobertson
   on:
     repo: TheImpersonator/CHSPE
+  deployment_branch: master
