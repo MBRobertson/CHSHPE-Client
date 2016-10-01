@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - '4.1'
+script:
+  - "npm run ci"
+deploy:
+  provider: openshift
+  user: mbr.robertson@gmail.com
+  password:
+    secure: JmLsloBKaUMFEdQf8/rYXvbNYbjL9TwYLEQlSlUKUIb6eE5+lyMV0I4fWmsZDx7PPTkLOAeSyk7xn3j50aFD9F6yq1jE7ffiWrRmdhaOKq5hjVJXbxPYkyKsC71L+XjNyFXi1GROiK6MvYr9r4uz5bw8uesFSAdpZITqpkulNKSpAr+sGEFj2X/XgcKc89uzsvp1yljMAgEZ5cLkFgRu3BTByK+syzCP6mXV41LR5/4YTCwQ3gUAQt7MnY8vF40h0uLKMfr/TV2mVENpTuJ3RdlxQMdOoWSsQAG4pOKYSdaEEsagfSwgJQGWB9kPIOpvdlSyR2uH5/qHQQ5M/aPNt/krimFk+zo8wwE9QV/nzvkS/PWXMT3qHG4ybXOlcZgHYTmjgjpVjs8D0lLYPhieF7JDN7D0qoEnWA3Csm41/laaByRUYcEx1alVQgLUMbtb2l1BBmdhAJ/n9yffdwXVCfvv0JRl1zo47sWyzBVZ/JHECsc56wzfjwUrdlbEPyQ38C9BzRRlklfXiUX6Nu3pHhs4aoNwfmmkqU7AEeRNRoO/iQHJaPpwF0ZfOG+PmJjaK6uBTO3jVIKg4raRFam/0jQoECMbhOGy7yncUguyUD2b4TKUo4ztrgiJObJ2rSuYONCA3HrhRJlNR5AAKbVBZvi6uXJGU9oJQferzWHfslc=
+  app: chspe
+  domain: mbrobertson
+  on:
+    repo: TheImpersonator/CHSPE

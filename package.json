@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "webpack -d --watch",
-    "build": "webpack -p"
+    "build": "webpack -d",
+    "ci": "webpack -p"
   },
   "repository": {
     "type": "git",
