@@ -8,7 +8,7 @@ import { Home } from './pages/home.jsx';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import Nav from './components/Nav.jsx';
+import Nav from './components/nav.jsx';
 
 class App extends React.Component {
     render() {
