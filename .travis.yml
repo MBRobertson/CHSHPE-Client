@@ -1,15 +1,19 @@
 language: node_js
 node_js:
-  - '4.1'
+- '4.1'
 script:
-  - "npm run ci"
+- npm run ci
+after_success:
+- git config --global user.email "travis@localhost.localdomain"
+- git config --global user.name "Travis CI"
+- git add --all
+- git commit -am "Travis change"
 deploy:
   provider: openshift
   user: mbr.robertson@gmail.com
   password:
-    secure: JmLsloBKaUMFEdQf8/rYXvbNYbjL9TwYLEQlSlUKUIb6eE5+lyMV0I4fWmsZDx7PPTkLOAeSyk7xn3j50aFD9F6yq1jE7ffiWrRmdhaOKq5hjVJXbxPYkyKsC71L+XjNyFXi1GROiK6MvYr9r4uz5bw8uesFSAdpZITqpkulNKSpAr+sGEFj2X/XgcKc89uzsvp1yljMAgEZ5cLkFgRu3BTByK+syzCP6mXV41LR5/4YTCwQ3gUAQt7MnY8vF40h0uLKMfr/TV2mVENpTuJ3RdlxQMdOoWSsQAG4pOKYSdaEEsagfSwgJQGWB9kPIOpvdlSyR2uH5/qHQQ5M/aPNt/krimFk+zo8wwE9QV/nzvkS/PWXMT3qHG4ybXOlcZgHYTmjgjpVjs8D0lLYPhieF7JDN7D0qoEnWA3Csm41/laaByRUYcEx1alVQgLUMbtb2l1BBmdhAJ/n9yffdwXVCfvv0JRl1zo47sWyzBVZ/JHECsc56wzfjwUrdlbEPyQ38C9BzRRlklfXiUX6Nu3pHhs4aoNwfmmkqU7AEeRNRoO/iQHJaPpwF0ZfOG+PmJjaK6uBTO3jVIKg4raRFam/0jQoECMbhOGy7yncUguyUD2b4TKUo4ztrgiJObJ2rSuYONCA3HrhRJlNR5AAKbVBZvi6uXJGU9oJQferzWHfslc=
+    secure: L5k5F+9j25pQMmLvZqivNKtgdTUl2ovyygxtdwK3n4TCfSvYVU5zjMdcOfXxogtujJU+Uqpdv2Hg9wC5ZDUs6LZGHjqhoB3hbP4AajzjVPgL8hk4GDsUdbUQ7VECOJ9oQNRVpBA/U+xk62Z/Cb7L11yXS+CNpWFi+DbnLeSUk3vN628a0I0wKT0Vdo1yjU4Aaeb7cP4ev2j1CiNxyDL4UHQXpUjI9DHBiqBWpM60GQD82DAiA+He3qUBIyghn/1ix5sJQBYxRFYInvMII+4O4tEZtKTdfM1lJn2hzL4Dl0I+rC/ZNPZLRi9FE8TomAfFUEcAn0wOjZN4+gHdVJB+rKk3ezkX0esVEUmV0M7sfsfnCTmSNomYiAkYmPgBGgGCHXttVZCFf+4LLcrxPt6Aoh07y/BALpDzpgKi/p+fnipAT/caDtk9UCGFfifXuppU9wNBSt8u5lBQn2dHJcQ3U9wjDzf8VWi+Gvc3gJHZl5x/j1LCYf9MPhjEP/Oa0I6IJC0fmCna+/reXDF0MNswiIklL94DQTnrKDzlK6B/SOJG4sYZ/dEKY3PQgKyi28CjOFzshmy8+l40toLjoVjRGzf/HREupAPxi/PgrMGts/2ac73oOOBnjp/nm3DXxr8mjwQIV0hUcAxJBEwTAnWlAb/10iiklG26JegmyXv9Auc=
   app: chspe
   domain: mbrobertson
   on:
     repo: TheImpersonator/CHSPE
-  deployment_branch: master
