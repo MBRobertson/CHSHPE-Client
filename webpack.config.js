@@ -20,8 +20,13 @@ if (TRAVIS) {
 
 var config = {
     bail: TRAVIS,
-    entry: path.join(APP_DIR, 'app.jsx'),
+    entry: ['whatwg-fetch', path.join(APP_DIR, 'app.jsx')],
     plugins: plugins,
+    resolve: {
+        alias: {
+            'config': path.join(__dirname, 'src', 'config.jsx')
+        }
+    },
     output: {
         path: BUILD_DIR,
         filename: 'js/app.js'

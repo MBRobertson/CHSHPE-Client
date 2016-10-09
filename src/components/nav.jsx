@@ -21,6 +21,11 @@ let pages = [
                 id: 3,
                 title: 'Timetable',
                 url: '/timetable'
+            },
+            {
+                id: 4,
+                title: 'Teachers',
+                url: '/teachers'
             }
         ]
     },

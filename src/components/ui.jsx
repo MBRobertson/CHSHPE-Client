@@ -22,6 +22,12 @@ class Button extends React.Component {
     }
 }
 
+class Text extends React.Component {
+    render() {
+        return (<span className="ui-text">{this.props.text}</span>)
+    }
+}
+
 class Divider extends React.Component {
     render() {
         return (<span className='ui-divider'></span>);
@@ -32,8 +38,9 @@ const UI = {
     'Button': Button,
     'Header': Header,
     'Card': Card,
-    'Divider': Divider
+    'Divider': Divider,
+    'Text': Text
 }
 
 export default UI
-export { UI, Card, Header, Button, Divider }
+export { UI, Card, Header, Button, Divider, Text }
