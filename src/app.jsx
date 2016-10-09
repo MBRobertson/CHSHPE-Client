@@ -6,6 +6,7 @@ import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
 import { Home } from './pages/home.jsx';
 import { Teachers } from './pages/teachers.jsx';
+import { Schedule } from './pages/schedule.jsx';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -50,7 +51,7 @@ ReactDOM.render(
     (<Router history={hashHistory}>
         <Route path="/" component={App}>
             <IndexRoute path="" component={Home} />
-            <Route path="timetable" component={Timetable}/>
+            <Route path="schedule" component={Schedule}/>
             <Route path="teachers" component={Teachers}/>
         </Route>
     </Router>),

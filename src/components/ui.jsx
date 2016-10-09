@@ -15,10 +15,23 @@ class Header extends React.Component {
         );
     }
 }
+class SubHeader extends React.Component {
+    render() {
+        return (
+            <h5 className="ui-subheader">{this.props.text}</h5>
+        );
+    }
+}
 
 class Button extends React.Component {
+
     render() {
-        return (<a className="ui-button" href={'#' + this.props.url}>{this.props.text}</a>);
+        if (this.props.onClick) {
+            return (<span className="ui-button" onClick={this.props.onClick}>{this.props.text}</span>);
+        }
+        else {
+            return (<a className="ui-button" href={'#' + this.props.url}>{this.props.text}</a>);
+        }
     }
 }
 
@@ -39,8 +52,9 @@ const UI = {
     'Header': Header,
     'Card': Card,
     'Divider': Divider,
-    'Text': Text
+    'Text': Text,
+    'SubHeader': SubHeader
 }
 
 export default UI
-export { UI, Card, Header, Button, Divider, Text }
+export { UI, Card, Header, Button, Divider, Text, SubHeader }

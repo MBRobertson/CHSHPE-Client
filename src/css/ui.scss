@@ -10,8 +10,9 @@
 }
 
 .ui-card {
-    margin: $card-margin;
+    margin: $card-margin auto;
     width: calc(100% - #{$card-margin * 2});
+    max-width: 680px;
     height: auto;
     padding: 10px 15px;
     background-color: white;
@@ -29,6 +30,17 @@
         font-size: 22px;
         font-weight: Normal;
         font-family: 'Roboto';
+    }
+
+    .ui-subheader {
+        margin: 0;
+        padding: 5px;
+        display: block;
+        width: 100%;
+        color: lighten($header-grey, 5%);
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Roboto Condensed';
     }
 
     .ui-button {

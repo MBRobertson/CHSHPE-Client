@@ -1,0 +1,28 @@
+#schedulePage {
+    .class {
+        padding: 3px 10px;
+        width: 100%;
+        overflow: hidden;
+
+        .name {
+            display: inline-block;
+            font-family: 'Roboto',Arial,sans-serif;
+            font-size: 20px;
+            width: 50%;
+
+            .code {
+                font-size: 16px;
+                font-weight: bold;
+                margin-left: 10px;
+                color: #868686;
+            }
+        }
+
+        .location {
+            font-family: 'Roboto Condensed',Arail,sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #565656
+        }
+    }
+}

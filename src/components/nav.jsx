@@ -12,15 +12,15 @@ let pages = [
                 nav_text: 'Dashboard',
                 url: '/'
             },
-            {
-                id: 2,
-                title: 'News',
-                url: '/news'
-            },
+            // {
+            //     id: 2,
+            //     title: 'News',
+            //     url: '/news'
+            // },
             {
                 id: 3,
-                title: 'Timetable',
-                url: '/timetable'
+                title: 'Schedule',
+                url: '/schedule'
             },
             {
                 id: 4,

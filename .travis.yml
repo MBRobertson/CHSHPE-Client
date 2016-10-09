@@ -16,4 +16,4 @@ deploy:
   app: chspe
   domain: mbrobertson
   on:
-    repo: TheImpersonator/CHSPE
+    repo: TheImpersonator/CHSPE-Client
