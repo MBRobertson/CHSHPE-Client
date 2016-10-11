@@ -84,7 +84,7 @@ class Home extends React.Component {
             </div>)
         }
         else if (this.state.day.period <= 0) {
-            return (<div>>
+            return (<div>
                 {defaultGreeting}
                 <UI.Card>
                     <UI.Header text={'It is currently ' + (this.state.day.period == 0 ? 'before school' : 'after school')}/>
