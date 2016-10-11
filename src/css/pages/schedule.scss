@@ -4,11 +4,15 @@
         width: 100%;
         overflow: hidden;
 
+        &.faded {
+            opacity: 0.3;
+        }
+
         .name {
             display: inline-block;
             font-family: 'Roboto',Arial,sans-serif;
             font-size: 20px;
-            width: 50%;
+            width: 60%;
 
             .code {
                 font-size: 16px;

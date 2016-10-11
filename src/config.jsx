@@ -46,8 +46,11 @@ let time = {
             callback(json);
         })
     },
-    toString: (time) => {
-        return (time.week + time.day + ':' + time.period);
+    toString: (time, short) => {
+        if (short)
+            return (time.week + time.day)
+        else
+            return (time.week + time.day + ':' + time.period);
     },
     getSchedule: (timeString, callback) => {
         fetch(config.api + '/schedule/' + timeString).then((response) => {

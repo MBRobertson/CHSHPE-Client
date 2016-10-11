@@ -1,5 +1,6 @@
 import React from 'react';
 import { UI } from '../components/ui.jsx';
+import { PeriodView } from '../components/period-view.jsx';
 
 import { Config } from 'config';
 
@@ -16,13 +17,11 @@ class Schedule extends React.Component {
         }
 
         this.refresh = this.refresh.bind(this);
-        this.getClass = this.getClass.bind(this);
-        this.getLocation = this.getLocation.bind(this);
     }
 
     componentDidMount() {
         Config.time.getDay((day) => {
-            Config.time.getSchedule(Config.time.toString(day), (schedule) => {
+            Config.time.getSchedule(Config.time.toString(day, true), (schedule) => {
                 this.setState({
                     day: day,
                     schedule: schedule
@@ -39,29 +38,13 @@ class Schedule extends React.Component {
             schedule: null
         });
         Config.time.getDay((day) => {
-            Config.time.getSchedule(Config.time.toString(day), (schedule) => {
+            Config.time.getSchedule(Config.time.toString(day, true), (schedule) => {
                 this.setState({
                     day: day,
                     schedule: schedule
                 })
             })
         })
-    }
-
-    getClass(id) {
-        let classList = this.state.classList
-        for (var i = 0; i < classList.length; i++) {
-            if (classList[i]._id == id)
-                return classList[i];
-        }
-    }
-
-    getLocation(id) {
-        let locationList = this.state.locationList
-        for (var i = 0; i < locationList.length; i++) {
-            if (locationList[i]._id == id)
-                return locationList[i];
-        }
     }
 
     render() {
@@ -80,49 +63,34 @@ class Schedule extends React.Component {
                 </UI.Card>
             )
         }
-        else if (this.state.day.period <= 0) {
+        /*else if (this.state.day.period <= 0) {
             return (
                 <UI.Card>
-                    <UI.Header text={'It is currently ' + (this.state.period == 0 ? 'before school' : 'after school')}/>
+                    <UI.Header text={'It is currently ' + (this.state.day.period == 0 ? 'before school' : 'after school')}/>
                     <UI.SubHeader text={'Week ' + this.state.day.week + ' - Day ' + this.state.day.day}/>
                 </UI.Card>
             )
-        }
+        }*/
         else {
-            console.log(this.state.schedule);
             var scheduleItems = [];
-            for (var c in this.state.schedule.locations) {
-                let classData = this.getClass(c);
-                let locationData = this.getLocation(this.state.schedule.locations[c]);
-                if (classData && locationData) {
-                    scheduleItems.push(
-                        <ScheduleItem key={c} classData={classData} locationData={locationData} />
-                    )
-                }
+            for (var i = 1; i <= 5; i++) {
+                scheduleItems.push(
+                    <PeriodView key={i} period={i} time={this.state.day} schedule={this.state.schedule} classList={this.state.classList} locationList={this.state.locationList}/>
+                )
             }
+
             return (
                 <div id="schedulePage">
                     <UI.Card>
-                        <UI.Header text={'Period ' + this.state.day.period}/>
+                        <UI.Header text="Schedule"/>
                         <UI.SubHeader text={'Week ' + this.state.day.week + ' - Day ' + this.state.day.day}/>
-                        <UI.Divider/>
-                        {scheduleItems}
-                        <UI.Divider/>
                         <UI.Button onClick={this.refresh} text="Refresh" />
                     </UI.Card>
+                    {scheduleItems}
                 </div>)
             ;
         }
 
-    }
-}
-
-class ScheduleItem extends React.Component {
-    render() {
-        return <div className="class">
-            <span className="name">{this.props.classData.name}<span className="code">{this.props.classData.teacher}</span></span>
-            <span className="location">{this.props.locationData.name}</span>
-    </div>
     }
 }
 //id="homePage"
