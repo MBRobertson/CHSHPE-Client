@@ -53,7 +53,7 @@ class PeriodView extends React.Component {
         for (var i = 0; i < this.props.schedule.length; i++) {
             if (this.props.schedule[i].slot == slot)
             {
-                return this.props.schedule[i].locations;
+                return this.props.schedule[i].locations || {};
             }
 
         }
