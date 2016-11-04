@@ -41,6 +41,9 @@ document.addEventListener('deviceready', () => {
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#003865");
     }
+    /*if (device.platform == 'iOS') {*/
+    //setTimeout(function() {StatusBar.overlaysWebView(false);}, 0);
+
     console.log("Running...")
 
     ReactDOM.render(
