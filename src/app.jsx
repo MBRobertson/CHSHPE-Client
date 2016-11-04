@@ -33,27 +33,24 @@ class App extends React.Component {
 </ReactCSSTransitionGroup>
 */
 
-
-
-class Timetable extends React.Component {
-    render() {
-        return (
-            <h2>Hello Timetable!</h2>
-        );
-    }
-}
-
 //document.addEventListener('deviceready', *func, false);
 
 //ReactDOM.render(<App/>, document.getElementById('app'));
 
-ReactDOM.render(
-    (<Router history={hashHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute path="" component={Home} />
-            <Route path="schedule" component={Schedule}/>
-            <Route path="teachers" component={Teachers}/>
-        </Route>
-    </Router>),
-    document.getElementById('app')
-);
+document.addEventListener('deviceready', () => {
+    if (cordova.platformId == 'android') {
+        StatusBar.backgroundColorByHexString("#003865");
+    }
+    console.log("Running...")
+
+    ReactDOM.render(
+        (<Router history={hashHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute path="" component={Home} />
+                <Route path="schedule" component={Schedule}/>
+                <Route path="teachers" component={Teachers}/>
+            </Route>
+        </Router>),
+        document.getElementById('app')
+    );
+}, false);
