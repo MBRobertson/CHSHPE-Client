@@ -8,6 +8,7 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#01579b" />
     <preference name="StatusBarStyle" value="blackopaque" />
+    <preference name="DisallowOverscroll" value="true" />
     <access origin="http://chspeserver-mbrobertson.rhcloud.com" />
     <icon src="www/icon.png" />
     <platform name="android">

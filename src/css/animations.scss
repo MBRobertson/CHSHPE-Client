@@ -1,25 +1,25 @@
 @import './config.scss';
 
 .pageSwap-enter {
-    transform: translate3d(0, 0, 0) translateX(120%);
+    transform: translate3d(120%, 0, 0);
     //border-left: 1px solid #343434;
     z-index: 1;
 }
 
 .pageSwap-enter.pageSwap-enter-active {
-    transform: translate3d(0, 0, 0) translateX(0%);
+    transform: translate3d(0, 0, 0);
     transition: transform ease-out 390ms;
 }
 
 .pageSwap-leave {
     opacity: 1;
-    transform: translate3d(0, 0, 0) translateX(0%);
+    transform: translate3d(0, 0, 0);
     z-index: -10;
 }
 
 .pageSwap-leave.pageSwap-leave-active {
     opacity: 0;
-    transform: translate3d(0, 0, 0) translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
     transition: opacity linear 390ms, transform ease-out 390ms;
 }
 
