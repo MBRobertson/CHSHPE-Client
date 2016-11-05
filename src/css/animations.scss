@@ -12,15 +12,15 @@
 }
 
 .pageSwap-leave {
-    opacity: 1;
+    //opacity: 1;
     transform: translate3d(0, 0, 0);
     z-index: -10;
 }
 
 .pageSwap-leave.pageSwap-leave-active {
-    opacity: 0;
+    //opacity: 0;
     transform: translate3d(-50%, 0, 0);
-    transition: opacity linear 250ms, transform ease-out 250ms;
+    transition: transform ease-out 250ms;
 }
 
 //Nav overlays
