@@ -17,7 +17,7 @@ class App extends React.Component {
         return (
             <main>
                 <Nav loc={this.props.location}/>
-                <ReactCSSTransitionGroup transitionName="pageSwap" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+                <ReactCSSTransitionGroup transitionName="pageSwap" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
                     <section id="mainContent" key={this.props.location.pathname}>
                         {this.props.children}
                     </section>
