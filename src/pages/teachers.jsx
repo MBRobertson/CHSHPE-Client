@@ -44,7 +44,7 @@ class Teachers extends React.Component {
             })
         } else {
             teacherBoxes.push(
-                <UI.Card>
+                <UI.Card key="loading">
                     <UI.Header text="Loading..."/>
                 </UI.Card>
             )
