@@ -44,6 +44,11 @@ class Home extends React.Component {
         });
         Config.classes.get((classList) => { this.setState({ classList: classList }) });
         Config.locations.get((locationList) => { this.setState({ locationList: locationList }) });
+        document.addEventListener("resume", this.refresh, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("resume", this.refresh, false);
     }
 
     render() {

@@ -30,7 +30,6 @@ class Teachers extends React.Component {
 
     componentDidMount() {
         Config.teachers.get((teachers) => {
-            console.log(teachers)
             this.setState({
                 teachers: teachers
             })

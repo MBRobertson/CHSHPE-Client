@@ -24,7 +24,8 @@ var config = {
     plugins: plugins,
     resolve: {
         alias: {
-            'config': path.join(__dirname, 'src', 'config.jsx')
+            'config': path.join(__dirname, 'src', 'config.jsx'),
+            'data': path.join(__dirname, 'src', 'data.jsx')
         }
     },
     output: {
