@@ -28,7 +28,7 @@ let pages = [
                 url: '/teachers'
             }
         ]
-    },
+    }/*,
     {
         id: 2,
         heading: "SETTINGS",
@@ -39,7 +39,7 @@ let pages = [
                 url: '/settings'
             }
         ]
-    }
+    }*/
 ]
 
 let getPageTitle = (location) => {

@@ -17,9 +17,11 @@ class App extends React.Component {
         return (
             <main>
                 <Nav loc={this.props.location}/>
-                <section id="mainContent" key={this.props.location.pathname}>
-                    {this.props.children}
-                </section>
+                <ReactCSSTransitionGroup transitionName="pageSwap" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+                    <section id="mainContent" key={this.props.location.pathname}>
+                        {this.props.children}
+                    </section>
+                </ReactCSSTransitionGroup>
             </main>
         );
     }

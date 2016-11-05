@@ -1,22 +1,26 @@
 @import './config.scss';
 
 .pageSwap-enter {
-    opacity: 0;
+    transform: translateX(100%);
     //border-left: 1px solid #343434;
+    z-index: 1;
 }
 
 .pageSwap-enter.pageSwap-enter-active {
-    opacity: 1;
-    transition: opacity linear 300ms;
+    transform: translateX(0%);
+    transition: transform ease-out 300ms;
 }
 
 .pageSwap-leave {
     opacity: 1;
+    transform: translateX(0%);
+    z-index: -10;
 }
 
 .pageSwap-leave.pageSwap-leave-active {
     opacity: 0;
-    transition: opacity linear 300ms;
+    transform: translateX(-50%);
+    transition: opacity linear 300ms, transform ease-out 300ms;
 }
 
 //Nav overlays
