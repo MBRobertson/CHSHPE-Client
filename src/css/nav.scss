@@ -13,8 +13,9 @@ nav {
     z-index: 10;
     border-bottom: 1px solid darken($school-color, 7%);
     //border-top: 1px solid lighten($school-color, 7%);
+    border-top: 1px solid $school-color;
 
-    box-shadow: 0 0 4px #909090;
+    box-shadow: 0 0 4px darken($school-color, 15%);
 
     h1 {
         display: inline-block;

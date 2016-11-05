@@ -45,8 +45,12 @@ var config = {
                 include: path.join(APP_DIR, 'css')
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file?name=./fonts/[name].[ext]'
+            },
+            {
+                test: /\.(png|svg)$/,
+                loader: 'file?name=./img/[name].[ext]'
             }
         ]
     }

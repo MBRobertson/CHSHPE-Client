@@ -53,10 +53,11 @@ class Home extends React.Component {
 
     render() {
         var defaultGreeting = (
-            <UI.Card>
-                <UI.Header text="Welcome to the CHS PE app!"/>
-                <UI.SubHeader text="View information about your PE classes"/>
-            </UI.Card>
+            <section id="schoolHeader">
+                <div id="schoolLogo"></div>
+                <h2>Cambridge High School</h2>
+                <h1>PE Information App</h1>
+            </section>
         )
         /*return (<div>
             <UI.Card>
@@ -71,7 +72,7 @@ class Home extends React.Component {
             </UI.Card>
         </div>);*/
         if (!(this.state.day && this.state.schedule && this.state.classList && this.state.locationList)) {
-            return (<div>
+            return (<div id="homePage">
                 {defaultGreeting}
                 <UI.Card>
                     <UI.Header text="Fetching data"/>
@@ -80,7 +81,7 @@ class Home extends React.Component {
             </div>)
         }
         else if (this.state.day.day <= 0 || this.state.day.day >= 6) {
-            return (<div>
+            return (<div id="homePage">
                 {defaultGreeting}
                 <UI.Card>
                     <UI.Header text="It's currently the weekend"/>
@@ -89,7 +90,7 @@ class Home extends React.Component {
             </div>)
         }
         else if (this.state.day.period <= 0) {
-            return (<div>
+            return (<div id="homePage">
                 {defaultGreeting}
                 <UI.Card>
                     <UI.Header text={'It is currently ' + (this.state.day.period == 0 ? 'before school' : 'after school')}/>
@@ -98,7 +99,7 @@ class Home extends React.Component {
             </div>)
         }
         else {
-            return (<div>
+            return (<div id="homePage">
                 {defaultGreeting}
                 <div id="schedulePage">
                     <PeriodView dayData={true} period={this.state.day.period} time={this.state.day} schedule={this.state.schedule} classList={this.state.classList} locationList={this.state.locationList}>
