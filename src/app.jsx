@@ -12,6 +12,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Nav from './components/nav.jsx';
 
+import Data from 'data';
+
 class App extends React.Component {
     render() {
         return (
@@ -46,14 +48,15 @@ document.addEventListener('deviceready', () => {
     /*if (device.platform == 'iOS') {*/
     //setTimeout(function() {StatusBar.overlaysWebView(false);}, 0);
 
+    Data.beginFetch();
     console.log("Running...")
 
     ReactDOM.render(
         (<Router history={hashHistory}>
             <Route path="/" component={App}>
-                <IndexRoute path="" component={Home} />
-                <Route path="schedule" component={Schedule}/>
-                <Route path="teachers" component={Teachers}/>
+                <IndexRoute path="" data={Data} component={Home} />
+                <Route path="schedule" data={Data} component={Schedule}/>
+                <Route path="teachers" data={Data} component={Teachers}/>
             </Route>
         </Router>),
         document.getElementById('app')
