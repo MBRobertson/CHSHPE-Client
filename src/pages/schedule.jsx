@@ -8,48 +8,56 @@ class Schedule extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            class: Config.user.getClass(),
-            day: null,
-            schedule: null,
-            classList: null,
-            locationList: null
+        if (this.props.route.data.checkData()) {
+            let info = this.props.route.data.getData();
+            this.state = {
+                class: Config.user.getClass(),
+                day: info.time,
+                schedule: info.schedule,
+                classList: info.classes,
+                locationList: info.locations
+            }
+        } else {
+            this.state = {
+                class: Config.user.getClass(),
+                day: null,
+                schedule: null,
+                classList: null,
+                locationList: null
+            }
         }
 
         this.refresh = this.refresh.bind(this);
+        this.populateData = this.populateData.bind(this);
+    }
+
+    populateData() {
+        let info = this.props.route.data.getData();
+        this.setState({
+            day: info.time,
+            schedule: info.schedule,
+            classList: info.classes,
+            locationList: info.locations
+        })
     }
 
     componentDidMount() {
-        Config.time.getDay((day) => {
-            Config.time.getSchedule(Config.time.toString(day, true), (schedule) => {
-                this.setState({
-                    day: day,
-                    schedule: schedule
-                })
-            })
-        });
-        Config.classes.get((classList) => { this.setState({ classList: classList }) });
-        Config.locations.get((locationList) => { this.setState({ locationList: locationList }) });
+        this.refresh()
+        document.addEventListener("dataready", this.populateData, false);
         document.addEventListener("resume", this.refresh, false);
     }
 
     componentWillUnmount() {
+        document.removeEventListener("dataready", this.populateData, false);
         document.removeEventListener("resume", this.refresh, false);
     }
 
     refresh() {
-        this.setState({
-            day: null,
-            schedule: null
-        });
-        Config.time.getDay((day) => {
-            Config.time.getSchedule(Config.time.toString(day, true), (schedule) => {
-                this.setState({
-                    day: day,
-                    schedule: schedule
-                })
-            })
-        })
+        let data = this.props.route.data;
+        data.getSchedule();
+        data.getClasses();
+        data.getLocations();
+        data.verifyData();
     }
 
     render() {

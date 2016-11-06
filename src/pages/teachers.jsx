@@ -23,17 +23,44 @@ class Teachers extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            teachers: null
+        if (this.props.route.data.checkData()) {
+            let info = this.props.route.data.getData();
+            this.state = {
+                teachers: info.teachers
+            }
+        } else {
+            this.state = {
+                teachers: null
+            }
         }
+
+        this.populateData = this.populateData.bind(this);
+    }
+
+    populateData() {
+        let info = this.props.route.data.getData();
+        this.setState({
+            teachers: info.teachers
+        })
     }
 
     componentDidMount() {
-        Config.teachers.get((teachers) => {
-            this.setState({
-                teachers: teachers
-            })
-        });
+        this.props.route.data.verifyData();
+        document.addEventListener("dataready", this.populateData, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("dataready", this.populateData, false);
+    }
+
+    populateData() {
+        let info = this.props.route.data.getData();
+        this.setState({
+            day: info.time,
+            schedule: info.schedule,
+            classList: info.classes,
+            locationList: info.locations
+        })
     }
 
     render() {
