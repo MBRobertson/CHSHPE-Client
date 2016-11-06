@@ -109,11 +109,10 @@ class Home extends React.Component {
             return (<div id="homePage">
                 {defaultGreeting}
                 <div id="schedulePage">
-                    <PeriodView dayData={true} period={this.state.day.period} time={this.state.day} schedule={this.state.schedule} classList={this.state.classList} locationList={this.state.locationList}>
-                        <UI.Divider/>
-                        <UI.Button onClick={this.refresh} text="Refresh" />
-                        <UI.Button url="/schedule" text="Schedule" />
-                    </PeriodView>
+                    <PeriodView dayData={true} period={this.state.day.period} time={this.state.day} schedule={this.state.schedule} classList={this.state.classList} locationList={this.state.locationList}></PeriodView>
+                    {/*<UI.Divider/>
+                    <UI.Button onClick={this.refresh} text="Refresh" />*/}
+                    <UI.Button url="/schedule" text="Full Schedule" />
                 </div></div>)
             ;
         }

@@ -50,4 +50,22 @@
     .ui-card {
         box-shadow: 0 0 15px 1px darken($school-color, 15%) !important;
     }
+
+    .ui-button {
+        display: block;
+        margin: $card-margin auto;
+        width: 65%;
+        max-width: 420;
+        text-align: center;
+        height: auto;
+        padding: 10px 25px;
+        background-color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $school-color;
+        border-radius: 3px;
+        box-sizing: border-box;
+        box-shadow: 0 0 15px 1px darken($school-color, 15%);
+        overflow: hidden;
+    }
 }
