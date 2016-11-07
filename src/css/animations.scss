@@ -22,7 +22,7 @@
 .pageSwap-leave.pageSwap-leave-active {
     opacity: 0;
     //transform: translate3d(-50%, 0, 0);
-    //transition: opacity ease-out 250ms;
+    transition: opacity ease-out 250ms;
 }
 
 //Nav overlays
