@@ -64,7 +64,8 @@ class Schedule extends React.Component {
         if (!(this.state.day && this.state.schedule && this.state.classList && this.state.locationList)) {
             return (
                 <UI.Card>
-                    <UI.Header text="Loading..."/>
+                    <UI.Header text="Fetching data"/>
+                    <UI.SubHeader text="One moment please..."/>
                 </UI.Card>
             )
         }
@@ -97,7 +98,7 @@ class Schedule extends React.Component {
                     <UI.Card>
                         <UI.Header text="Schedule"/>
                         <UI.SubHeader text={'Week ' + this.state.day.week + ' - Day ' + this.state.day.day}/>
-                        <UI.Button onClick={this.refresh} text="Refresh" />
+                        {/*<UI.Button onClick={this.refresh} text="Refresh" />*/}
                     </UI.Card>
                     {scheduleItems}
                 </div>)
