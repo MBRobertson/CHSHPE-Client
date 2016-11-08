@@ -1,6 +1,8 @@
 @import '../config.scss';
 
 #homePage {
+    display: block;
+    overflow: auto;
     height: 100%;
     background-color: darken($school-color, 7%);
 
