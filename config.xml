@@ -7,6 +7,7 @@
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#01579b" />
+    <preference name="orientation" value="portrait" />
     <preference name="StatusBarStyle" value="blackopaque" />
     <preference name="DisallowOverscroll" value="true" />
     <access origin="http://chspeserver-mbrobertson.rhcloud.com" />
