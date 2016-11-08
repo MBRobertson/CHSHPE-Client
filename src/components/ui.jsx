@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class Card extends React.Component {
     render() {
@@ -30,7 +31,7 @@ class Button extends React.Component {
             return (<span className="ui-button" onClick={this.props.onClick}>{this.props.text}</span>);
         }
         else {
-            return (<a className="ui-button" href={'#' + this.props.url}>{this.props.text}</a>);
+            return (<Link className="ui-button" to={this.props.url}>{this.props.text}</Link>);
         }
     }
 }
