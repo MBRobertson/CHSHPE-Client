@@ -1,16 +1,16 @@
 @import './config.scss';
 
 .pageSwap-enter {
-    transform: translate3d(120%, 0, 0);
+    transform: translate3d(100%, 0, 0);
     //border-left: 1px solid #343434;
     z-index: 1;
     //opacity: 0;
 }
 
 .pageSwap-enter.pageSwap-enter-active {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0.1%, 0, 0);
     //opacity: 1;
-    transition: transform linear 250ms;
+    transition: transform cubic-bezier(0.18, 0.31, 0.43, 1.01) 225ms;
 }
 
 .pageSwap-leave {
@@ -22,7 +22,7 @@
 .pageSwap-leave.pageSwap-leave-active {
     opacity: 0;
     transform: translate3d(-50%, 0, 0);
-    transition: opacity ease-out 250ms, transform linear 250ms;
+    transition: opacity ease-out 225ms, transform linear 225ms;
 }
 
 //Nav overlays
