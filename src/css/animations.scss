@@ -10,7 +10,7 @@
 .pageSwap-enter.pageSwap-enter-active {
     transform: translate3d(0, 0, 0);
     //opacity: 1;
-    transition: transform ease-out 250ms;
+    transition: transform linear 250ms;
 }
 
 .pageSwap-leave {
@@ -22,7 +22,7 @@
 .pageSwap-leave.pageSwap-leave-active {
     opacity: 0;
     transform: translate3d(-50%, 0, 0);
-    transition: opacity ease-out 250ms, transform ease-out 250ms;
+    transition: opacity ease-out 250ms, transform linear 250ms;
 }
 
 //Nav overlays
