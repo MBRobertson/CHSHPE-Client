@@ -10,6 +10,7 @@
     <preference name="orientation" value="portrait" />
     <preference name="StatusBarStyle" value="blackopaque" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
     <access origin="http://chspeserver-mbrobertson.rhcloud.com" />
     <icon src="www/res/icon/android/icon-192-xxxhdpi.png" />
     <platform name="android">
@@ -19,7 +20,6 @@
         <icon density="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
         <icon density="xxhdpi" src="www/res/icon/android/icon-144-xxhdpi.png" />
         <icon density="xxxhdpi" src="www/res/icon/android/icon-192-xxxhdpi.png" />
-        <!--<splash src="www/res/screen/ios/Default@3x~universal~comany.png" />-->
     </platform>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
@@ -38,7 +38,7 @@
         <icon height="29" platform="ios" src="www/res/icon/ios/icon-small.png" width="29" />
         <icon height="58" platform="ios" src="www/res/icon/ios/icon-small@2x.png" width="58" />
         <icon height="87" platform="ios" src="www/res/icon/ios/icon-small@3x.png" width="87" />
-        <splash src="www/res/screen/ios/Default@3x~universal~comany.png" />
+        <splash src="www/res/screen/ios/Default@3x~universal~anyany.png" />
     </platform>
     <platform name="wp8">
         <icon height="99" platform="wp8" src="www/res/icon/wp8/ApplicationIcon.png" width="99" />
@@ -89,5 +89,4 @@
     </plugin>
     <engine name="android" spec="~6.0.0" />
     <engine name="ios" spec="~4.3.0" />
-    <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
 </widget>
