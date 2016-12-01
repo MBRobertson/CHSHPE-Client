@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="nz.mimicry.chspe2" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>CHS PE</name>
-    <description>An app to display locations of PE classes for Cambridge High School</description>
-    <author email="support@phonegap.com" href="http://phonegap.com">PhoneGap Team</author>
+<widget id="nz.mimicry.chspe2" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>CHS HPE</name>
+    <description>An app to display locations of HPE classes for Cambridge High School</description>
+    <author email="mbr.robertson@gmail.com" href="http://mimicy.nz">Michael Robertson</author>
     <content src="index.html" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="StatusBarOverlaysWebView" value="false" />
@@ -11,7 +11,7 @@
     <preference name="StatusBarStyle" value="blackopaque" />
     <preference name="DisallowOverscroll" value="true" />
     <access origin="http://chspeserver-mbrobertson.rhcloud.com" />
-    <icon src="www/icon.png" />
+    <icon src="www/res/icon/android/icon-192-xxxhdpi.png" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
         <icon density="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
@@ -80,7 +80,13 @@
     <plugin name="cordova-plugin-console" spec="~1.0.4" />
     <plugin name="cordova-plugin-statusbar" spec="~2.1.3" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.0" />
-    <plugin name="org.crosswalk.engine" spec="1.3.0" source="pgb" />
     <engine name="ios" spec="~4.3.0" />
-    <!--<plugin name="cordova-plugin-crosswalk-webview" spec="~2.2.0" />-->
+    <plugin name="cordova-plugin-crosswalk-webview" spec="~2.2.0">
+        <variable name="XWALK_VERSION" value="22+" />
+        <variable name="XWALK_LITEVERSION" value="xwalk_core_library_canary:17+" />
+        <variable name="XWALK_COMMANDLINE" value="--disable-pull-to-refresh-effect" />
+        <variable name="XWALK_MODE" value="embedded" />
+        <variable name="XWALK_MULTIPLEAPK" value="true" />
+    </plugin>
+    <engine name="android" spec="~6.0.0" />
 </widget>

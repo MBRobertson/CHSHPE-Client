@@ -63,7 +63,7 @@ class Home extends React.Component {
             <section id="schoolHeader">
                 <div id="schoolLogo"></div>
                 <h2>Cambridge High School</h2>
-                <h1>PE Information App</h1>
+                <h1>HPE Information App</h1>
             </section>
         )
         /*return (<div>

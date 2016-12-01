@@ -4,11 +4,11 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 let pages = [
     {
         id: 1,
-        heading: "CHS PE",
+        heading: "CHS HPE",
         pages: [
             {
                 id: 1,
-                title: 'CHS PE',
+                title: 'CHS HPE',
                 nav_text: 'Dashboard',
                 url: '/'
             },
