@@ -1,5 +1,7 @@
 import './css/main.scss';
 
+import FastClick from './components/fastclick.js';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
@@ -45,6 +47,7 @@ document.addEventListener('deviceready', () => {
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#003865");
     }
+    FastClick.attach(document.body);
     /*if (device.platform == 'iOS') {*/
     //setTimeout(function() {StatusBar.overlaysWebView(false);}, 0);
 
