@@ -3,7 +3,18 @@ import { Link } from 'react-router';
 
 class Card extends React.Component {
     render() {
-        return (<div className="ui-card">
+        let padding = this.props.padded;
+        if (typeof padding === 'undefined' || padding === null)
+            padding = true;
+        return (<div className={"ui-card" + (padding ? "" : " ui-unpadded")}>
+            {this.props.children}
+        </div>);
+    }
+}
+
+class Padding extends React.Component {
+    render() {
+        return (<div className="ui-padding">
             {this.props.children}
         </div>);
     }
@@ -28,10 +39,10 @@ class Button extends React.Component {
 
     render() {
         if (this.props.onClick) {
-            return (<span className="ui-button" onClick={this.props.onClick}>{this.props.text}</span>);
+            return (<span className={"ui-button" + (this.props.selected ? " selected" : "")} onClick={this.props.onClick}>{this.props.text}</span>);
         }
         else {
-            return (<Link className="ui-button" to={this.props.url}>{this.props.text}</Link>);
+            return (<Link className={"ui-button" + (this.props.selected ? " selected" : "")} to={this.props.url}>{this.props.text}</Link>);
         }
     }
 }
@@ -48,14 +59,24 @@ class Divider extends React.Component {
     }
 }
 
+class TabBar extends React.Component {
+    render() {
+        return (<div className="ui-tabbar">
+            {this.props.children}
+        </div>)
+    }
+}
+
 const UI = {
     'Button': Button,
     'Header': Header,
     'Card': Card,
+    'Padding': Padding,
     'Divider': Divider,
     'Text': Text,
-    'SubHeader': SubHeader
+    'SubHeader': SubHeader,
+    'TabBar': TabBar
 }
 
 export default UI
-export { UI, Card, Header, Button, Divider, Text, SubHeader }
+export { UI, Card, Padding, Header, Button, Divider, Text, SubHeader, TabBar }

@@ -12,7 +12,8 @@
             display: inline-block;
             font-family: 'Roboto',Arial,sans-serif;
             font-size: 20px;
-            width: 60%;
+            width: 50%;
+            vertical-align: top;
 
             .code {
                 font-size: 16px;
@@ -23,6 +24,8 @@
         }
 
         .location {
+            display: inline-block;
+            width: 50%;
             font-family: 'Roboto Condensed',Arail,sans-serif;
             font-size: 18px;
             font-weight: bold;

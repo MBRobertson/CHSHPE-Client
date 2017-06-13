@@ -103,6 +103,7 @@ class Home extends React.Component {
                     <UI.Header text={'It is currently ' + (this.state.day.period == 0 ? 'before school' : 'after school')}/>
                     <UI.SubHeader text={'Week ' + this.state.day.week + ' - Day ' + this.state.day.day}/>
                 </UI.Card>
+                <UI.Button url="/schedule" text="Week Schedule" />
             </div>)
         }
         else {
@@ -112,7 +113,7 @@ class Home extends React.Component {
                     <PeriodView dayData={true} period={this.state.day.period} time={this.state.day} schedule={this.state.schedule} classList={this.state.classList} locationList={this.state.locationList}></PeriodView>
                     {/*<UI.Divider/>
                     <UI.Button onClick={this.refresh} text="Refresh" />*/}
-                    <UI.Button url="/schedule" text="Full Schedule" />
+                    <UI.Button url="/schedule" text="Week Schedule" />
                 </div></div>)
             ;
         }

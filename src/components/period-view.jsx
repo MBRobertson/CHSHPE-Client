@@ -7,27 +7,23 @@ class PeriodView extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            slot: Config.time.toString(this.props.time, true) + ':' + this.props.period
-        }
-
         this.getRelevantClasses = this.getRelevantClasses.bind(this);
         this.getLocationList = this.getLocationList.bind(this);
         this.getClass = this.getClass.bind(this);
         this.getLocation = this.getLocation.bind(this);
     }
 
-    getRelevantClasses() {
+    getRelevantClasses(slot) {
         var classes = {
             scheduled: [],
             unscheduled: []
         };
 
-        var locations = this.getLocationList(this.state.slot);
+        var locations = this.getLocationList(slot);
 
         for (var i = 0; i < this.props.classList.length; i++) {
             let c = this.props.classList[i];
-            if (c.timetable.indexOf(this.state.slot) >= 0) {
+            if (c.timetable.indexOf(slot) >= 0) {
                 var c = this.getClass(c._id)
                 var item = {
                     id: c._id,
@@ -78,7 +74,8 @@ class PeriodView extends React.Component {
 
 
     render() {
-        var classes = this.getRelevantClasses();
+        console.log(Config.time.toString(this.props.time, true) + ':' + this.props.period);
+        var classes = this.getRelevantClasses(Config.time.toString(this.props.time, true) + ':' + this.props.period);
 
         var scheduledItems = [];
         var unscheduledItems = [];
