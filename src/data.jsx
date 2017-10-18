@@ -32,22 +32,34 @@ function getTime() {
     });
 }
 
-function getSchedule() {
+function getSchedule(day) {
     //gotData['time'] = false;
     //gotData['schedule'] = false;
-    Config.time.getDay((day) => {
-        time = {
-            'week': day.week,
-            'day': day.day,
-            'period': day.period
-        };
+    if (!day)
+    {
+        Config.time.getDay((day) => {
+            time = {
+                'week': day.week,
+                'day': day.day,
+                'period': day.period
+            };
+            gotData.time = true;
+            Config.time.getSchedule(Config.time.toString(day, true), (scheduleData) => {
+                schedule = scheduleData;
+                gotData.schedule = true;
+                verifyData();
+            })
+        });
+    }
+    else {
         gotData.time = true;
+        time = day;
         Config.time.getSchedule(Config.time.toString(day, true), (scheduleData) => {
             schedule = scheduleData;
             gotData.schedule = true;
             verifyData();
         })
-    });
+    }
 }
 
 function getClasses() {

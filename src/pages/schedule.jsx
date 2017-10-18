@@ -29,6 +29,21 @@ class Schedule extends React.Component {
 
         this.refresh = this.refresh.bind(this);
         this.populateData = this.populateData.bind(this);
+        this.tabClick = this.tabClick.bind(this);
+    }
+
+    tabClick(id) {
+        return () => {
+            var day = {
+                'week': this.state.day.week,
+                'day': id,
+                'period': this.state.day.period
+            };
+            this.setState({
+                day: day
+            });
+            this.props.route.data.getSchedule(day);
+        }
     }
 
     populateData() {
@@ -54,7 +69,7 @@ class Schedule extends React.Component {
 
     refresh() {
         let data = this.props.route.data;
-        data.getSchedule();
+        data.getSchedule(this.state.day);
         data.getClasses();
         data.getLocations();
         data.verifyData();
@@ -95,9 +110,18 @@ class Schedule extends React.Component {
 
             return (
                 <div id="schedulePage">
-                    <UI.Card>
-                        <UI.Header text="Schedule"/>
-                        <UI.SubHeader text={'Week ' + this.state.day.week + ' - Day ' + this.state.day.day}/>
+                    <UI.Card padded={false}>
+                        <UI.Padding>
+                            <UI.Header text="Schedule"/>
+                            <UI.SubHeader text={'Week ' + this.state.day.week + ' - Day ' + ((this.state.day.week == "B" ? 5 : 0) + parseInt(this.state.day.day))}/>
+                        </UI.Padding>
+                        <UI.TabBar>
+                            {[1, 2, 3, 4, 5].map((day) => {
+                                return (
+                                    <UI.Button text={"Day " + (parseInt(day) + (this.state.day.week == "B" ? 5 : 0))} onClick={this.tabClick(day)} selected={day == this.state.day.day}/>
+                                )
+                            })}
+                        </UI.TabBar>
                         {/*<UI.Button onClick={this.refresh} text="Refresh" />*/}
                     </UI.Card>
                     {scheduleItems}
