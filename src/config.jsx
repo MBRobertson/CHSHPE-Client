@@ -1,5 +1,3 @@
-import 'whatwg-fetch';
-
 var config = {
     //api: 'http://localhost:3001/api'
     //api: 'http://chspeserver-mbrobertson.rhcloud.com/api'

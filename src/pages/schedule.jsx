@@ -2,7 +2,7 @@ import React from 'react';
 import { UI } from '../components/ui.jsx';
 import { PeriodView } from '../components/period-view.jsx';
 
-import { Config } from 'config';
+import { Config } from '../config';
 
 class Schedule extends React.Component {
     constructor(props) {

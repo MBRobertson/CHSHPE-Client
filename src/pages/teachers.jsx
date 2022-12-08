@@ -1,7 +1,7 @@
 import React from 'react';
 import { UI } from '../components/ui.jsx';
 
-import { Config } from 'config';
+import { Config } from '../config';
 
 class Teacher extends React.Component {
     render() {

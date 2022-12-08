@@ -839,3 +839,5 @@
 		window.FastClick = FastClick;
 	}
 }());
+
+export default undefined;

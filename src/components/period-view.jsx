@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { UI } from './ui.jsx';
-import { Config } from 'config';
+import { Config } from '../config';
 
 class PeriodView extends React.Component {
     constructor(props) {
@@ -24,15 +24,15 @@ class PeriodView extends React.Component {
         for (var i = 0; i < this.props.classList.length; i++) {
             let c = this.props.classList[i];
             if (c.timetable.indexOf(slot) >= 0) {
-                var c = this.getClass(c._id)
+                var c2 = this.getClass(c._id)
                 var item = {
-                    id: c._id,
-                    name: c.name,
-                    teacher: c.teacher,
+                    id: c2._id,
+                    name: c2.name,
+                    teacher: c2.teacher,
                     location: 'No location set'
                 }
-                if (locations[c._id]) {
-                    item.location = this.getLocation(locations[c._id]).name;
+                if (locations[c2._id]) {
+                    item.location = this.getLocation(locations[c2._id]).name;
                     classes.scheduled.push(item);
                 }
                 else {
