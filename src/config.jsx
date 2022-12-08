@@ -3,7 +3,7 @@ import 'whatwg-fetch';
 var config = {
     //api: 'http://localhost:3001/api'
     //api: 'http://chspeserver-mbrobertson.rhcloud.com/api'
-    api: 'http://13.55.87.144/api'
+    api: 'http://admin.chshpe.nz/api'
 }
 
 let teachers = {
